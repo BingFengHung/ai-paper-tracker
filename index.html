@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="description" content="Track latest AI research papers: LLM, RAG, Agent" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>AI Paper Tracker</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <img src="./icon.svg" alt="logo" class="logo-img" />
+          <div>
+            <h1>AI Paper Tracker</h1>
+            <p class="subtitle" id="last-updated">Loading…</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="refresh-btn" class="btn-icon" title="Refresh">↻</button>
+          <span id="offline-badge" class="badge-offline hidden">Offline</span>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <span id="stat-total">— papers</span>
+        <span id="stat-new" class="hidden stat-new">● — new</span>
+        <span id="stat-bookmarks">☆ 0 saved</span>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="LLM">LLM</button>
+        <button class="filter-btn" data-filter="RAG">RAG</button>
+        <button class="filter-btn" data-filter="Agent">Agent</button>
+        <button class="filter-btn" data-filter="bookmarks">☆ Saved</button>
+      </div>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="🔍  Search titles or authors…"
+          autocomplete="off"
+        />
+      </div>
+    </header>
+
+    <main id="paper-list">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading papers…</p>
+      </div>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
