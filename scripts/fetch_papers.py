@@ -5,9 +5,9 @@ import requests
 import json
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-import os
+import osm
 
-KEYWORDS = ["LLM", "RAG", "Agent"]
+KEYWORDS = ["LLM", "RAG", "Agent", "Harness"]
 MAX_RESULTS = 20
 ARXIV_API = "http://export.arxiv.org/api/query"
 NS = {
