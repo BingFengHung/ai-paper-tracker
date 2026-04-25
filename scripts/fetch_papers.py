@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 import os
 
 KEYWORDS = ["LLM", "RAG", "Agent", "Harness"]
-MAX_RESULTS = 50
+MAX_RESULTS = 30
 ARXIV_API = "http://export.arxiv.org/api/query"
 NS = {
     "atom": "http://www.w3.org/2005/Atom",
