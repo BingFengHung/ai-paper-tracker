@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-30T01:51:02.636856+00:00",
+  "updated_at": "2026-04-30T13:17:54.457309+00:00",
   "keywords": [
     "LLM",
     "RAG",
@@ -8,6 +8,202 @@
   ],
   "total": 20,
   "papers": [
+    {
+      "id": "2604.26946v1",
+      "title": "Three-Step Nav: A Hierarchical Global-Local Planner for Zero-Shot Vision-and-Language Navigation",
+      "summary": "Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs). These models can plan a sequence of motions by evaluating the current view at each time step against the task and goal given to the agent. However, current zero-shot Vision-and-Language Navigation (VLN) agents powered by MLLMs still tend to drift off course, halt prematurely, and achieve low overall success rates. We propose Three-Step Nav to counteract these failures with a three-view protocol: First, \"look forward\" to extract global landmarks and sketch a coarse plan. Then, \"look now\" to align the current visual observation with the next sub-goal for fine-grained guidance. Finally, \"look backward\" audits the entire trajectory to correct accumulated drift before stopping. Requiring no gradient updates or task-specific fine-tuning, our planner drops into existing VLN pipelines with minimal overhead. Three-Step Nav achieves state-of-the-art zero-shot performance on the R2R-CE and RxR-CE dataset. Our code is available at https://github.com/ZoeyZheng0/3-step-Nav.",
+      "authors": [
+        "Wanrong Zheng",
+        "Yunhao Ge",
+        "Laurent Itti"
+      ],
+      "published": "2026-04-29T17:55:05Z",
+      "updated": "2026-04-29T17:55:05Z",
+      "url": "http://arxiv.org/abs/2604.26946v1",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26940v1",
+      "title": "Select to Think: Unlocking SLM Potential with Local Sufficiency",
+      "summary": "Small language models (SLMs) offer computational efficiency for scalable deployment, yet they often fall short of the reasoning power exhibited by their larger counterparts (LLMs). To mitigate this gap, current approaches invoke an LLM to generate tokens at points of reasoning divergence, but these external calls introduce substantial latency and costs. Alternatively, standard distillation is often hindered by the capacity limitation, as SLMs struggle to accurately mimic the LLM's complex generative distribution. We address this dilemma by identifying local sufficiency: at divergence points, the LLM's preferred token consistently resides within the SLM's top-K next-token predictions, even when failing to emerge as the SLM top-1 choice. We therefore propose SELECT TO THINK (S2T), which reframes the LLM's role from open-ended generation to selection among the SLM's proposals, simplifying the supervision signal to discrete candidate rankings. Leveraging this, we introduce S2T-LOCAL, which distills the selection logic into the SLM, empowering it to perform autonomous re-ranking without inference-time LLM dependency. Empirically, we demonstrate that a 1.5B SLM's top-8 candidates capture the 32B LLM's choice with 95% hit rate. Translating this potential into performance, S2T-LOCAL improves greedy decoding by 24.1% on average across benchmarks, effectively matching the efficacy of 8-path self-consistency while operating with single-trajectory efficiency.",
+      "authors": [
+        "Wenxuan Ye",
+        "Yangyang Zhang",
+        "Xueli An",
+        "Georg Carle",
+        "Yunpu Ma"
+      ],
+      "published": "2026-04-29T17:51:39Z",
+      "updated": "2026-04-29T17:51:39Z",
+      "url": "http://arxiv.org/abs/2604.26940v1",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "RAG"
+      ]
+    },
+    {
+      "id": "2604.26939v1",
+      "title": "Degree-dependent and distance-dependent contact rates interpolate between explosive, exponential and polynomial epidemic growth",
+      "summary": "It is a fundamental question in epidemiology to estimate, model and predict the growth rate of a pandemic. Analogously, analysing the diffusion of innovation, (fake) news, memes, and rumours is of key importance in the social sciences. The resulting epidemic growth curves can be classified according to their growth rates. These have been found to range from exponential to both faster super-exponential curves and slower subexponential or polynomial curves. Previous research has lacked a unified explanatory framework capable of accommodating super-exponential, (stretched) exponential, and polynomial growth patterns within the same contact network. In this paper we propose a simple agent-based network model that can capture all these phases. We provide such a framework by modelling how transmission rates depend on spatial distance and on individuals' numbers of contacts. By comparing the growth rate of spreading processes with or without degree-dependent and/or distance-dependent contact rates through data-driven and synthetic simulations on real and modelled networks with underlying geometry, we find evidence that even a 'sublinear presence' of these causes may cause a significant slow down of the growth rate on the same underlying network. We find that the growth rate is governed by a combination of three factors: geometry, the prevalence of weak ties, and superspreaders. We confirm our results with rigorous proofs in a theoretical model, using a spatial multiscale-argument in long-range heterogeneous first passage percolation. Our results give a plausible explanation of why the consecutive waves of a single pandemic can differ in their growth even if their spreading mechanisms are similar.",
+      "authors": [
+        "Zylan Benjert",
+        "Júlia Komjáthy",
+        "Johannes Lengler",
+        "John Lapinskas",
+        "Ulysse Schaller"
+      ],
+      "published": "2026-04-29T17:51:23Z",
+      "updated": "2026-04-29T17:51:23Z",
+      "url": "http://arxiv.org/abs/2604.26939v1",
+      "categories": [
+        "math.PR",
+        "cs.SI",
+        "q-bio.PE"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26923v1",
+      "title": "ClassEval-Pro: A Cross-Domain Benchmark for Class-Level Code Generation",
+      "summary": "LLMs have achieved strong results on both function-level code synthesis and repository-level code modification, yet a capability that falls between these two extremes -- compositional code creation, i.e., building a complete, internally structured class from a specification -- remains underserved. Current evaluations are either confined to isolated functions or rely on manually curated class-level tasks that are expensive to scale and increasingly susceptible to data contamination. We introduce ClassEval-Pro, a benchmark of 300 class-level tasks spanning 11 domains, constructed through an automated three-stage pipeline that combines complexity enhancement, cross-domain class composition, and integration of real-world GitHub code contributed after January 2025. Every task is validated by an LLM Judge Ensemble and must pass test suites with over 90% line coverage. We evaluate five frontier LLMs under five generation strategies. The best model achieves only 45.6% class-level Pass@1, with a 17.7-point gap between the strongest and weakest models, confirming the benchmark's discriminative power. Strategy choice strongly interacts with model capability: structured approaches such as bottom-up improve weaker models by up to 9.4 percentage points, while compositional generation collapses to as low as 1.3%. Error analysis over 500 manually annotated failures reveals that logic errors (56.2%) and dependency errors (38.0%) dominate, identifying cross-method coordination as the core bottleneck.",
+      "authors": [
+        "Yeheng Chen",
+        "Chaoxiang Xie",
+        "Yuling Shi",
+        "Wenhao Zeng",
+        "Yongpan Wang"
+      ],
+      "published": "2026-04-29T17:38:37Z",
+      "updated": "2026-04-29T17:38:37Z",
+      "url": "http://arxiv.org/abs/2604.26923v1",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "RAG"
+      ]
+    },
+    {
+      "id": "2604.26904v1",
+      "title": "ClawGym: A Scalable Framework for Building Effective Claw Agents",
+      "summary": "Claw-style environments support multi-step workflows over local files, tools, and persistent workspace states. However, scalable development around these environments remains constrained by the absence of a systematic framework, especially one for synthesizing verifiable training data and integrating it with agent training and diagnostic evaluation. To address this challenge, we present ClawGym, a scalable framework that supports the full lifecycle of Claw-style personal agent development. Concretely, we construct ClawGym-SynData, a diverse dataset of 13.5K filtered tasks synthesized from persona-driven intents and skill-grounded operations, paired with realistic mock workspaces and hybrid verification mechanisms. We then train a family of capable Claw-style models, termed ClawGym-Agents, through supervised fine-tuning on black-box rollout trajectories, and further explore reinforcement learning via a lightweight pipeline that parallelizes rollouts across per-task sandboxes.To support reliable evaluation, we further construct ClawGym-Bench, a benchmark of 200 instances calibrated through automated filtering and human-LLM review. Relevant resources will be soon released at https://github.com/ClawGym.",
+      "authors": [
+        "Fei Bai",
+        "Huatong Song",
+        "Shuang Sun",
+        "Daixuan Cheng",
+        "Yike Yang"
+      ],
+      "published": "2026-04-29T17:12:22Z",
+      "updated": "2026-04-29T17:12:22Z",
+      "url": "http://arxiv.org/abs/2604.26904v1",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26902v1",
+      "title": "Many-to-many stable matching in large economies",
+      "summary": "We study stability notions for networked many-to-many matching markets with individually insignificant agents in distributional form. Outcomes are formulated as joint distributions over characteristics of agents and contract choices. Characteristics can lie in an arbitrary Polish space. We provide a mechanical method for transferring existence results for finite matching models to large matching models for many stability notions. In particular, we show that tree-stable and pairwise-stable outcomes exist.",
+      "authors": [
+        "Michael Greinecke",
+        "Karolina Vocke"
+      ],
+      "published": "2026-04-29T17:11:57Z",
+      "updated": "2026-04-29T17:11:57Z",
+      "url": "http://arxiv.org/abs/2604.26902v1",
+      "categories": [
+        "econ.TH"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26892v1",
+      "title": "Hot Fixing in the Wild",
+      "summary": "Despite the operational importance of hot fixes, large-scale evidence on how they reshape routine maintenance workflows, particularly in the era of autonomous coding agents, remains limited. We analyse hot fixes present in over 61,000 GitHub repositories from the Hao-Li/AIDev dataset and find consistent patterns of urgency: reduced collaboration (typically a single contributor), smaller and more targeted changes (median 2-3 commits and files, with <10 line modifications), limited review (often fewer than two reviewers), and substantially fewer test file modifications than regular bug fixes, consistent with their urgency-driven character. Leveraging the same urgency contexts, we examine differences between human- and AI-agent-authored hot fixes, revealing over 10 distinct repair behaviours, thus offering insights into future human-automation collaboration for hot fixing. Our study is the first to empirically analyse hot fix code changes at scale using a repository-level operationalisation of urgency. The comparison of human and agentbehaviours delineates their distinct characteristics, providing a foundation for understanding hot fixing in real-world practice",
+      "authors": [
+        "Carol Hanna",
+        "Karine Even-Mendoza",
+        "W. B. Langdon",
+        "Mar Zamorano López",
+        "Justyna Petke"
+      ],
+      "published": "2026-04-29T17:01:01Z",
+      "updated": "2026-04-29T17:01:01Z",
+      "url": "http://arxiv.org/abs/2604.26892v1",
+      "categories": [
+        "cs.SE"
+      ],
+      "matched_keywords": [
+        "RAG",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26887v1",
+      "title": "Resolving growth-induced off-stoichiometry in AgCrSe$_2$ single crystals",
+      "summary": "The layered delafossite-like antiferromagnet AgCrSe$_2$ is a superionic conductor at high temperatures and has been reported to exhibit anomalous Hall behavior and Kondo physics at low temperatures. These extraordinary transport properties have been established almost exclusively on single crystals grown by chemical vapor transport, raising questions about the role of growth-induced off-stoichiometry. Using elemental analysis, single-crystal X-ray diffraction, and magnetization measurements, we show that such crystals are indeed systematically off-stoichiometric, with a general composition of Ag$_{1-x}$Cr(Se$_{2-y}$Cl$_y$) ($x \\approx y \\approx 0.08$) arising from the use of CrCl$_3$ as a transport agent. This off-stoichiometry manifests in altered magnetic properties, most notably a suppressed Néel temperature of 46\\,K compared to 58\\,K in stoichiometric polycrystalline samples prepared by solid-state synthesis. By optimizing an Ag/Se self-flux growth method, we obtained large single crystals of AgCrSe$_2$ that recover the magnetic transition temperature and saturation field of stoichiometric powder samples. These results establish self-flux growth as a route to high-quality stoichiometric AgCrSe$_2$ single crystals and provide a reliable platform for reassessing whether the reported anomalous transport phenomena are intrinsic or arise from off-stoichiometry.",
+      "authors": [
+        "Felix Eder",
+        "Zeno Maesen",
+        "Yurii Skourski",
+        "Enrico Giannini",
+        "Oksana Zaharko"
+      ],
+      "published": "2026-04-29T16:56:33Z",
+      "updated": "2026-04-29T16:56:33Z",
+      "url": "http://arxiv.org/abs/2604.26887v1",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2604.26880v1",
+      "title": "HealthNLP_Retrievers at ArchEHR-QA 2026: Cascaded LLM Pipeline for Grounded Clinical Question Answering",
+      "summary": "Patient portals now give individuals direct access to their electronic health records (EHRs), yet access alone does not ensure patients understand or act on the complex clinical information contained in these records. The ArchEHR-QA 2026 shared task addresses this challenge by focusing on grounded question answering over EHRs, and this paper presents the system developed by the HealthNLP_Retrievers team for this task. The proposed approach uses a multi-stage cascaded pipeline powered by the Gemini 2.5 Pro large language model to interpret patient-authored questions and retrieve relevant evidence from lengthy clinical notes. Our architecture comprises four integrated modules: (1) a few-shot query reformulation unit which summarizes verbose patient queries; (2) a heuristic-based evidence scorer which ranks clinical sentences to prioritize recall; (3) a grounded response generator which synthesizes professional-caliber answers restricted strictly to identified evidence; and (4) a high-precision many-to-many alignment framework which links generated answers to supporting clinical sentences. This cascaded approach achieved competitive results. Across the individual tracks, the system ranked 1st in question interpretation, 5th in answer generation, 7th in evidence identification, and 9th in answer-evidence alignment. These results show that integrating large language models within a structured multi-stage pipeline improves grounding, precision, and the professional quality of patient-oriented health communication. To support reproducibility, our source code is publicly available in our GitHub repository",
+      "authors": [
+        "Md Biplob Hosen",
+        "Md Alomgeer Hussein",
+        "Md Akmol Masud",
+        "Omar Faruque",
+        "Tera L Reynolds"
+      ],
+      "published": "2026-04-29T16:47:20Z",
+      "updated": "2026-04-29T16:47:20Z",
+      "url": "http://arxiv.org/abs/2604.26880v1",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_keywords": [
+        "LLM"
+      ]
+    },
     {
       "id": "2604.26866v1",
       "title": "MoRFI: Monotonic Sparse Autoencoder Feature Identification",
@@ -237,202 +433,6 @@
       ],
       "matched_keywords": [
         "Agent"
-      ]
-    },
-    {
-      "id": "2604.26751v1",
-      "title": "Sub-50 Picosecond exceptionally Bright Perovskite Scintillation by Unlocking Giant Oscillator Strength",
-      "summary": "Ultrafast scintillators are indispensable for precise timing in high-energy physics and medical diagnostics. Fundamentally constrained by the trade-off between emission rate and light yield, conventional scintillators remain kinetically trapped in the sub-nanosecond regime, failing to break 50-picosecond limit. Here, we demonstrate a strategy to bypass this limitation by harnessing the coherent radiative acceleration in weakly confined CsPbCl3 perovskite nanocrystals to generate an ultrafast photon burst. This effect originates from the giant oscillator strength, which we unlock by suppressing exciton-phonon scattering at mild cryogenic temperatures. Consequently, our scintillator achieves an unprecedented dominant lifetime of 13.11 ps alongside a high light yield of 21,851 ph/MeV. The resulting prompt photon emission rate more than 100 times higher than that of state-of-the-art ultrafast scintillators. We validate this breakthrough in realistic detection scenarios, achieving a coincidence time resolution of 30.8 ps and accurately resolving 13.5 ps electron bunches and 16.6 ps single-shot gamma-ray pulses. Our findings establish a robust coherent framework for next-generation ultrafast scintillators, pushing extreme radiation diagnostics into the picosecond frontier.",
-      "authors": [
-        "Chuanwei Dai",
-        "Yunbiao Zhao",
-        "Xiao Ouyang",
-        "Huaqing Huang",
-        "Yulan Liang"
-      ],
-      "published": "2026-04-29T14:48:59Z",
-      "updated": "2026-04-29T14:48:59Z",
-      "url": "http://arxiv.org/abs/2604.26751v1",
-      "categories": [
-        "cond-mat.mes-hall"
-      ],
-      "matched_keywords": [
-        "Harness"
-      ]
-    },
-    {
-      "id": "2604.26747v1",
-      "title": "From Hypotheses to Factors: Constrained LLM Agents in Cryptocurrency Markets",
-      "summary": "LLM agents are promising tools for empirical discovery, but their flexibility can also turn discovery into uncontrolled search. We study how to use agents under a reproducible protocol through cryptocurrency factor discovery. Our framework casts the task as sequential hypothesis search: an agent reads an append-only experiment trace, proposes falsifiable factor hypotheses, and maps them to executable recipes, while a deterministic engine enforces fixed data splits, selection gates, transaction costs, and portfolio tests. Candidate actions are restricted to a point-in-time factor DSL, making both successful and failed hypotheses auditable. A ridge-combined portfolio trained only on 2020--2022 data achieves a 44.55% annualized return and Sharpe ratio of 1.55 in the 2024--2026 pure out-of-sample period after a 5 basis point one-way trading cost.",
-      "authors": [
-        "Yikuan Huang",
-        "Zheqi Fan",
-        "Kaiqi Hu",
-        "Yifan Ye"
-      ],
-      "published": "2026-04-29T14:46:10Z",
-      "updated": "2026-04-29T14:46:10Z",
-      "url": "http://arxiv.org/abs/2604.26747v1",
-      "categories": [
-        "q-fin.PM",
-        "q-fin.GN",
-        "q-fin.TR"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2604.26733v1",
-      "title": "FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards",
-      "summary": "Live future prediction refers to the task of making predictions about real-world events before they unfold. This task is increasingly studied using large language model-based agent systems, and it is important for building agents that can continually learn from real-world. Just as interactive environments have often driven progress in agents, advancing live future prediction naturally motivates viewing it as a learning environment. Prior works have explored future prediction from several different parts, but have generally not framed it as a unified learning environment. This task is appealing for learning because it can provide a large number of prediction questions grounded in diverse real-world events, while preventing answer leakage. To leverage the advantages of live future prediction, we present FutureWorld, a live agentic reinforcement learning environment that closes the training loop between prediction, outcome realization, and parameters update. In our environment, we take three open-source base models and train them for consecutive days. The results show that training is effective. Furthermore, we build a daily benchmark based on the environment and evaluate several frontier agents on it to establish performance baselines for current agent systems.",
-      "authors": [
-        "Zhixin Han",
-        "Yanzhi Zhang",
-        "Chuyang Wei",
-        "Maohang Gao",
-        "Xiawei Yue"
-      ],
-      "published": "2026-04-29T14:34:45Z",
-      "updated": "2026-04-29T14:34:45Z",
-      "url": "http://arxiv.org/abs/2604.26733v1",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "matched_keywords": [
-        "RAG",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2604.26718v1",
-      "title": "Tracking visible pulsed laser annealing of Hf0.5Zr0.5O2 heterostructures with in situ transmission electron microscopy",
-      "summary": "Laser annealing offers a promising route to back end of the line fabrication of ferroelectric thin film transistors based on hafnium-zirconium oxide (HZO). Due to the wide band gap of this material, previous reports have studied the crystallization of HZO using ultraviolet or infrared light. In contrast, we monitor its crystallization in a Si3N4/TiN/Hf0.5Zr0.5O2 thin film heterostructure upon irradiation with visible nanosecond laser pulses. This geometry mimics the structure of CMOS devices and harnesses the absorption of TiN in the visible regime to generate the heat necessary for the transformation. Through a series of local in situ measurements using a modified transmission electron microscope, we quantify the relationship between the HZO film thickness, critical laser energy density and the ferroelectric HZO phase fraction, finding a sharp threshold behavior in the laser pulse energy necessary to crystallize HZO. The optimal condition of irradiating an 8-nm HZO film with a single laser pulse with an energy density of 177 mJ/cm2 is found to produce 86% of the ferroelectric orthorhombic phase. Heat transfer dynamics within the heterostructure during laser annealing are revealed by finite element simulations, where the partial melting of the silicon nitride substrate is found to play an important role limiting the temperature to 1900 °C. This finding as well as the observed laser pulse energy threshold behavior support a kinetic crystallization pathway involving the tetragonal phase. More generally, these findings show how laser-driven phase engineering can lead to scalable design and enhanced performance of ferroelectric materials in advanced electronic applications.",
-      "authors": [
-        "Aida Amini",
-        "Shruti Verma",
-        "Katharina Kohlmann",
-        "Sebastian Obernberger",
-        "Jean-Christof Lamanque"
-      ],
-      "published": "2026-04-29T14:22:49Z",
-      "updated": "2026-04-29T14:22:49Z",
-      "url": "http://arxiv.org/abs/2604.26718v1",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "physics.app-ph"
-      ],
-      "matched_keywords": [
-        "RAG",
-        "Harness"
-      ]
-    },
-    {
-      "id": "2604.26703v1",
-      "title": "A self-evolving agent for explainable diagnosis of DFT-experiment band-gap mismatch",
-      "summary": "Standard density functional theory (DFT) routinely misclassifies the electronic ground state of correlated and structurally complex compounds, predicting metallic behaviour for materials that experiments report as semiconductors. Each such mismatch encodes a specific non-ideality -- magnetic ordering, electron correlation, an alternative polymorph, or a defect -- that the calculation excluded, but extracting that signal at scale has remained a manual exercise. Here we introduce XDFT, a closed-loop agent that diagnoses the mismatch automatically: it draws candidate hypotheses from a curated catalogue, executes the corresponding first-principles tests, and updates a global Bayesian posterior over hypothesis usefulness from each verdict. On a verified benchmark of 124 materials, XDFT identifies a resolving mechanism for 70 of 90 mismatch cases (78\\%), an order of magnitude above a uniform-random baseline (19\\%) and a static LLM ordering (20\\%). The internal posterior aligns with empirical performance over the benchmark timeline, and resolved cases collapse into a tri-partite element-class taxonomy that we distil into a four-line static rule. Each diagnosed material is returned with a corrected protocol and a mechanistic attribution; failed cases are flagged as evidence-backed targets for experimental re-examination.",
-      "authors": [
-        "Yue Li",
-        "Bijun Tang"
-      ],
-      "published": "2026-04-29T14:11:03Z",
-      "updated": "2026-04-29T14:11:03Z",
-      "url": "http://arxiv.org/abs/2604.26703v1",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "cs.AI",
-        "physics.comp-ph"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2604.26687v1",
-      "title": "COPUS: Co-adaptive Parallelism and Batch Size Selection in Large Language Model Training",
-      "summary": "Training large language models requires jointly configuring two interdependent aspects of the system: the global batch size, which governs statistical efficiency, and the 3D parallelism strategy, which governs hardware throughput. Existing approaches make these decisions independently: optimization work adapts the batch size to track the evolving critical batch size while keeping parallelism fixed, and systems work selects the fastest parallelism for a given fixed batch size without anticipating that the optimal batch size could change. We show that these decisions are tightly coupled: the throughput-optimal parallelism strategy may shift as the global batch size changes, so any method that fixes one while adapting the other operates with a suboptimal configuration for part of the training run. We present COPUS, a system that adaptively tunes the global batch size, parallelism strategy, and micro-batch size as training evolves. COPUS is guided by Goodput, the product of throughput and statistical efficiency, which models both hardware and statistical effects jointly and directly measures useful convergence per unit of wall-clock time. The system combines online gradient noise scale estimation under 3D parallelism with throughput-aware evaluation of candidate configurations, and supports efficient reconfiguration of both batch size and parallelism during training. We evaluate COPUS on LLM pre-training workloads across 1-4 nodes of 8xH100 and 8xMI210 GPUs and model sizes from 3B to 32B parameters, demonstrating average time-to-convergence speedups of 3.9-8.0% over the fastest baseline across four configurations, with peak gains up to 11.1%, including system overheads.",
-      "authors": [
-        "Akhmed Sakip",
-        "Erland Hilman Fuadi",
-        "Omar Sayedelahl",
-        "Zonghang Li",
-        "Jianshu She"
-      ],
-      "published": "2026-04-29T13:52:38Z",
-      "updated": "2026-04-29T13:52:38Z",
-      "url": "http://arxiv.org/abs/2604.26687v1",
-      "categories": [
-        "cs.DC"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "RAG"
-      ]
-    },
-    {
-      "id": "2604.26686v1",
-      "title": "When Model Editing Meets Service Evolution: A Knowledge-Update Perspective for Service Recommendation",
-      "summary": "The rapid evolution of software services poses substantial challenges to the design and implementation of effective recommendation systems. Traditional service recommendation approaches often rely on static representations and historical usage data, which are insufficient for adapting to the dynamic and evolving nature of service ecosystems. Recently, large language models (LLMs) have shown strong potential to overcome these limitations by leveraging rich contextual understanding. However, their practical use faces two major challenges: outdated service facts and invalid or redundant services. To address these issues, we propose EVOREC, an evolution-aware framework for service recommendation that leverages model editing in a locate-then-edit paradigm to incorporate updated service facts without costly retraining efficiently. This allows the model to remain aligned with evolving service ecosystems. To address invalid service issues, we introduce a Finite Automata (FA)-based constrained decoding mechanism with deduplication, which enforces structural and semantic validity while eliminating repeated services. Experiments on real-world service datasets demonstrate that our framework consistently outperforms existing baselines, e.g., achieving an average relative improvement of 25.9% in Recall@5. Moreover, under evolving service scenarios, our approach outperforms model fine-tuning approaches by 22.3%, demonstrating strong adaptability to service evolution and providing a practical solution for service recommendation in dynamic ecosystems",
-      "authors": [
-        "Guodong Fan",
-        "Cuiyun Gao",
-        "Chun Yong Chong",
-        "Lu Zhang",
-        "Jing Li"
-      ],
-      "published": "2026-04-29T13:51:56Z",
-      "updated": "2026-04-29T13:51:56Z",
-      "url": "http://arxiv.org/abs/2604.26686v1",
-      "categories": [
-        "cs.SE"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "RAG"
-      ]
-    },
-    {
-      "id": "2604.26683v1",
-      "title": "Transferability of Token Usage Rights: A Design Space Analysis of Generative AI Services",
-      "summary": "With the rapid spread of generative AI services, the token has gained value not only as a technical unit of language processing but also as an economic currency for accessing AI services. Major AI model providers have adopted token-based billing as their default service model, requiring users to purchase platform-bound, fixed token usage rights. However, the fixedness of these usage rights is grounded in the billing-policy decisions of service providers rather than in any technical necessity. This study defines the Transferability of token usage rights as a design property that allows users to flexibly reallocate purchased data resources free from the constraints of time, account, and service. Drawing on the Design Space Analysis framework of MacLean et al. (1991), we identify five design axes (Target, Direction, Unit, Control, Reversibility) and five concrete Transferability types (carry-over, co-management, transfer, conversion, and trade) by analyzing the billing policies and terms of service of four major LLM services (ChatGPT, Claude, Gemini, Grok). Our analysis reframes the token from a purely economic-technical primitive into a core element of user-centered system design that expands user choice and autonomy.",
-      "authors": [
-        "Jaeyong Lee",
-        "Heeju Kang",
-        "Ahra Cho",
-        "Baek Eunkyung"
-      ],
-      "published": "2026-04-29T13:50:36Z",
-      "updated": "2026-04-29T13:50:36Z",
-      "url": "http://arxiv.org/abs/2604.26683v1",
-      "categories": [
-        "cs.HC"
-      ],
-      "matched_keywords": [
-        "LLM"
-      ]
-    },
-    {
-      "id": "2604.26679v1",
-      "title": "MultEval: Supporting Collaborative Alignment for LLM-as-a-Judge Evaluation Criteria",
-      "summary": "LLM-as-a-judge approaches have emerged as a scalable solution for evaluating model behaviors, yet they rely on evaluation criteria often created by a single individual, embedding that person's assumptions, priorities, and interpretive lens. In practice, defining such criteria is a collaborative and contested process involving multiple stakeholders with different values, interpretations, and priorities; an aspect largely unsupported by existing tools. To examine this problem in depth, we present a formative study examining how stakeholders collaboratively create, negotiate, and refine evaluation criteria for LLM-as-a-judge systems. Our findings reveal challenges in human oversight, including difficulties in establishing shared understanding, aligning values across stakeholders with different expertise and priorities, and translating nuanced human judgments into criteria that are interpretable and actionable for LLM judges. Based on these insights, we developed MultEval, a system that supports collaborative criteria by enabling multiple evaluators to surface and diagnose disagreements using consensus-building theory, iteratively revise criteria with attached examples and proposal history, and maintain transparency over how judgments are encoded into an automated evaluator. We further report a case study in which a team of domain experts used MultEval to collaboratively author criteria, illustrating how coordination and collaborative consensus-making shape criteria evolution.",
-      "authors": [
-        "Charles Chiang",
-        "Simret Gebreegziabher",
-        "Annalisa Szymanski",
-        "Yukun Yang",
-        "Hyo Jin Do"
-      ],
-      "published": "2026-04-29T13:49:55Z",
-      "updated": "2026-04-29T13:49:55Z",
-      "url": "http://arxiv.org/abs/2604.26679v1",
-      "categories": [
-        "cs.HC"
-      ],
-      "matched_keywords": [
-        "LLM"
       ]
     }
   ]
