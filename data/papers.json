@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-07T13:17:03.797790+00:00",
+  "updated_at": "2026-06-08T02:32:18.903914+00:00",
   "keywords": [
     "LLM",
     "RAG",
@@ -9,131 +9,62 @@
   "total": 20,
   "papers": [
     {
-      "id": "2606.06493v1",
-      "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
-      "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
+      "id": "2606.07516v1",
+      "title": "Counterintuitive problems in discrete probability",
+      "summary": "This manuscript contains a collection of counterintuitive problems in discrete probability, together with detailed solutions. The dataset was constructed as part of a broader research project investigating the capabilities of the latest-generation Large Language Models (LLMs) in solving discrete probability problems, in order to assess whether LLMs tend to make systematic reasoning errors associated with known cognitive biases. The problems collected here are specifically designed to challenge heuristic reasoning strategies that often lead to intuitively appealing but mathematically incorrect conclusions. The dataset combines several types of problems. Some are adapted from classical probabilistic paradoxes and cognitive-bias literature, while others originate from recreational mathematics sources or were developed by ourselves following similar principles. The primary purpose of this document is to provide a transparent and publicly accessible reference for the problems used in our experimental evaluation of language models, as well as providing detailed human-made solutions. At the same time, we believe that this collection may also prove useful for future research on probabilistic reasoning, cognitive biases, and the evaluation of reasoning capabilities in artificial intelligence systems.",
       "authors": [
-        "Lizhi Yang",
-        "Junheng Li",
-        "Nehar Poddar",
-        "Yiling Hou",
-        "Gio Huh"
+        "Luca Avena",
+        "Gianmarco Bet",
+        "Bernardo Busoni"
       ],
-      "published": "2026-06-04T17:59:50Z",
-      "updated": "2026-06-04T17:59:50Z",
-      "url": "http://arxiv.org/abs/2606.06493v1",
+      "published": "2026-06-05T17:59:46Z",
+      "updated": "2026-06-05T17:59:46Z",
+      "url": "http://arxiv.org/abs/2606.07516v1",
       "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
+        "math.PR"
       ],
       "matched_keywords": [
-        "Agent"
+        "LLM"
       ]
     },
     {
-      "id": "2606.06492v1",
-      "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
-      "summary": "Code language models need repository-level context to resolve imports, APIs, and project conventions. Existing methods inject this knowledge as long inputs (retrieved through RAG or dependency analysis) or through per-repository fine-tuning and LoRA -- costly at repository scale and brittle to evolving codebases. We introduce Code2LoRA, a hypernetwork framework that generates repository-specific LoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead. Code2LoRA supports two usage scenarios: Code2LoRA-Static converts a single repository snapshot into an adapter, suitable for comprehension of stable codebases; while Code2LoRA-Evo maintains an adapter backed by a GRU hidden state updated per code diff, suitable for active development of evolving codebases. To evaluate Code2LoRA against parameter-efficient fine-tuning baselines, we build RepoPeftBench, a benchmark of 604 Python repositories with two tracks: a static track with 40K training and 12K test assertion-completion tasks, and an evolution track with 215K commit-derived training and 87K commit-derived test tasks. On the static track, Code2LoRA-Static achieves 63.8% cross-repo and 66.2% in-repo exact match, matching the per-repository LoRA upper bound; on the evolution track, Code2LoRA-Evo achieves 60.3% cross-repo exact match (+5.2 pp over a single shared LoRA). Code2LoRA's code can be found at https://anonymous.4open.science/r/code2lora-6857; the model checkpoints and RepoPeftBench datasets can be found at https://huggingface.co/code2lora.",
+      "id": "2606.07515v1",
+      "title": "How reliable are LLMs when it comes to playing dice?",
+      "summary": "We investigate the probabilistic reasoning capabilities of large language models through a controlled benchmarking study on discrete probability problems. We constructed two datasets, respectively a set of standard exercises and a set of counterintuitive exercises, designed to trigger heuristic reasoning, and evaluated 8 state-of-the-art models, each tested with and without Chain-of-Thought prompting. Models achieve an average accuracy of 0.96 on standard problems but only 0.59 on counterintuitive ones. We further provide empirical evidence of token bias: performance drops by over 20% when canonical formulations are replaced by disguised variants. Embedding misleading suggestions in the prompt reduces performance by up to 34%, with no model proving immune. Taken together, the reported findings suggest that current LLMs are not yet genuine probabilistic reasoners, despite their success in advanced mathematical problems.",
       "authors": [
-        "Liliana Hotsko",
-        "Yinxi Li",
-        "Yuntian Deng",
-        "Pengyu Nie"
+        "Luca Avena",
+        "Gianmarco Bet",
+        "Bernardo Busoni"
       ],
-      "published": "2026-06-04T17:59:46Z",
-      "updated": "2026-06-04T17:59:46Z",
-      "url": "http://arxiv.org/abs/2606.06492v1",
-      "categories": [
-        "cs.SE",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "matched_keywords": [
-        "RAG"
-      ]
-    },
-    {
-      "id": "2606.06480v1",
-      "title": "DNQ: Deep Nash Q-Network for Partially Observable n-Player Games",
-      "summary": "Many real-world competitive systems require multiple decision-makers to act simultaneously under shared constraints, limited information, and repeated interaction, as in auctions, resource allocation, and security competition. We study multi-turn simultaneous bidding as a controlled testbed for such problems and propose DNQ, a solver-in-the-loop equilibrium supervision framework for training bidding agents. DNQ alternates between trajectory collection, critic-based payoff estimation, equilibrium computation, and policy imitation. At each visited state, a shared critic predicts either pairwise payoff matrices or an exact N-player payoff tensor, an external solver computes equilibrium strategies, and the agents are trained by minimizing the KL divergence between their masked policies and the solver-derived equilibrium targets. We focus on a scalable pairwise formulation that greatly reduces equilibrium-solving cost and training time compared with the exact formulation, while the shared critic amortizes payoff learning across agents and states. Experiments compare the pairwise and exact variants using critic loss, policy entropy, bidding resource usage, and training cost, showing that the pairwise method scales to larger numbers of agents, whereas the exact method becomes computationally impractical as the joint game grows. These results illustrate the trade-off between strategic fidelity and scalability in repeated competitive environments.",
-      "authors": [
-        "Qintong Xie",
-        "Edward Koh",
-        "Xavier Cadet",
-        "Peter Chin"
-      ],
-      "published": "2026-06-04T17:58:01Z",
-      "updated": "2026-06-04T17:58:01Z",
-      "url": "http://arxiv.org/abs/2606.06480v1",
-      "categories": [
-        "cs.GT",
-        "cs.LG"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2606.06476v1",
-      "title": "Thinking with Imagination: Agentic Visual Spatial Reasoning with World Simulators",
-      "summary": "While Vision-Language Models (VLMs) have shown strong visual reasoning capabilities, their spatial reasoning abilities remain largely constrained to the observed images and text-oriented chain-of-thought. They often struggle to infer unobserved layouts, maintain cross-view consistency, and reason from alternative viewpoints when only limited egocentric observations are available. In this work, we study this problem as thinking with imagination, where a VLM actively acquires imagined visual evidence by interacting with a world simulator during reasoning. We propose Astra, an agentic spatial reasoning framework that empowers VLMs with action-conditioned visual imagination. Specifically, Astra couples Astra-VL, an RL-trained VLM policy, with Astra-WM, a Bagel-based world simulator that generates novel-view observations from context images and natural-language camera motions. To provide reliable imagined evidence, Astra-WM is trained with view consistency tuning to improve pose and content consistency across views. In the RL stage, we propose a world-simulator-in-the-loop two-phase RL curriculum to stabilize tool-use exploration and advance the model's ability to invoke the simulator only when imagined observations improve over direct answering. Experiments demonstrate that both the world simulator and the agentic policy are necessary: Astra-WM improves simulator-augmented Gemini-3-Flash on MMSI-Bench from 45.1 to 49.5, while Astra-VL improves the Qwen3-VL backbone from 29.8 to 38.8 on MMSI-Bench and from 36.8 to 42.7 on MindCube. These results show that imagined observations can provide useful spatial evidence, but effective world-model-augmented reasoning requires learning when, where, and how to imagine.",
-      "authors": [
-        "Chenming Zhu",
-        "Jingli Lin",
-        "Yilin Long",
-        "Peizhou Cao",
-        "Tai Wang"
-      ],
-      "published": "2026-06-04T17:56:36Z",
-      "updated": "2026-06-04T17:56:36Z",
-      "url": "http://arxiv.org/abs/2606.06476v1",
-      "categories": [
-        "cs.CV"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2606.06474v1",
-      "title": "Self-Augmenting Retrieval for Diffusion Language Models",
-      "summary": "Discrete diffusion language models generate text by iteratively denoising an entire response in parallel. At each step, they predict tentative tokens for every masked position, committing the confident predictions to the output and discarding the unconfident ones. We show that the discarded tokens are in fact a useful lookahead signal for retrieval-augmented generation: even low-confidence tokens often surface salient entities early in the denoising trajectory, enabling retrieval of stronger evidence before the output is finalized. We exploit this through Self-Augmenting Retrieval for Diffusion Language Models (SARDI), a dynamic RAG framework that uses these lookahead tokens to guide retrieval during denoising. SARDI is training-free, retriever-agnostic, and applicable to any reasoning-capable discrete diffusion language model. Across five multi-hop QA benchmarks, SARDI outperforms current training-free diffusion and autoregressive retrieval baselines at up to $8\\times$ higher throughput.",
-      "authors": [
-        "Paul Jünger",
-        "Justin Lovelace",
-        "Linxi Zhao",
-        "Dongyoung Go",
-        "Kilian Q. Weinberger"
-      ],
-      "published": "2026-06-04T17:56:27Z",
-      "updated": "2026-06-04T17:56:27Z",
-      "url": "http://arxiv.org/abs/2606.06474v1",
+      "published": "2026-06-05T17:59:42Z",
+      "updated": "2026-06-05T17:59:42Z",
+      "url": "http://arxiv.org/abs/2606.07515v1",
       "categories": [
         "cs.CL",
         "cs.AI",
-        "cs.LG"
+        "cs.HC",
+        "math.PR"
       ],
       "matched_keywords": [
+        "LLM",
         "RAG"
       ]
     },
     {
-      "id": "2606.06473v1",
-      "title": "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery",
-      "summary": "Large language model (LLM) agents are increasingly applied to long-horizon tasks such as scientific discovery and machine learning engineering (MLE), where sustained self-evolution becomes a key capability. However, existing MLE agents suffer from inter-branch information isolation, memoryless search, and lack of hierarchical control, which together hinder long-horizon optimization. We present MLEvolve, an LLM-based self-evolving multi-agent framework for end-to-end machine learning algorithm discovery. By extending tree search to Progressive MCGS, MLEvolve enables cross-branch information flow through graph-based reference edges and gradually shifts the search from broad exploration to focused exploitation with an entropy-inspired progressive schedule. To allow the agent to evolve with accumulated experience, we introduce Retrospective Memory, which combines a cold-start domain knowledge base with a dynamic global memory for task-specific experience retrieval and reuse. For stable long-horizon iteration, we further decouple strategic planning from code generation with adaptive coding modes. Evaluation on MLE-Bench shows that MLEvolve achieves state-of-the-art performance across multiple dimensions including average medal rate and valid submission rate under a 12-hour budget (half the standard runtime). Moreover, MLEvolve also outperforms specialized algorithm discovery methods including AlphaEvolve on mathematical algorithm optimization tasks, demonstrating strong cross-domain generalization. Our code is available at https://github.com/InternScience/MLEvolve.",
+      "id": "2606.07513v1",
+      "title": "Agentopia: Long-Term Life Simulation and Learning in Agent Societies",
+      "summary": "Humans learn from social life. Simulating this process with LLM-powered agents represents a promising research direction, raising a natural question: whether LLMs can learn from such simulated social experience to better understand and replicate human behavior. However, prior agent society simulations typically operate at the scale of days, limiting the depth of social interactions and long-term growth. In this paper, we study long-term life simulation and LLM learning in agent societies, with two goals: (1) investigating social behaviors that emerge from life-long simulation, and (2) developing anthropomorphic capabilities in LLMs, particularly intelligence in social life, through years of simulated social experience. Specifically, we present Agentopia, a comprehensive framework for long-term life simulation in multi-agent societies, where 100 agents autonomously pursue personal growth, develop social relationships, and fulfill their needs and goals over 10 simulated years. We define life reward to mirror human well-being, and leverage this reward to train LLMs via rejection sampling. Extensive experiments show that agents exhibit rich emergent social behaviors. Furthermore, life reward training effectively enhances the underlying LLM, which leads to improved agent well-being in simulation, and generalizes to downstream role-playing benchmarks with +15.6% improvement.",
       "authors": [
-        "Shangheng Du",
-        "Xiangchao Yan",
-        "Jinxin Shi",
-        "Zongsheng Cao",
-        "Shiyang Feng"
+        "Xintao Wang",
+        "Sirui Zheng",
+        "Hongqiu Wu",
+        "Weiyuan Li",
+        "Jen-tse Huang"
       ],
-      "published": "2026-06-04T17:55:59Z",
-      "updated": "2026-06-04T17:55:59Z",
-      "url": "http://arxiv.org/abs/2606.06473v1",
+      "published": "2026-06-05T17:59:31Z",
+      "updated": "2026-06-05T17:59:31Z",
+      "url": "http://arxiv.org/abs/2606.07513v1",
       "categories": [
-        "cs.AI",
         "cs.CL"
       ],
       "matched_keywords": [
@@ -143,19 +74,64 @@
       ]
     },
     {
-      "id": "2606.06470v1",
-      "title": "PC Layer: Polynomial Weight Preconditioning for Improving LLM Pre-Training",
-      "summary": "We propose a preconditioning (PC) layer, a weight parameterization via polynomial preconditioner that ensures stable weight conditioning throughout LLM training. The PC module reshapes the singular-value spectrum of weight matrices via low-degree polynomial preconditioning. After training, the preconditioned weights can be merged back into the original architecture, incurring no inference overhead. We demonstrate the advantage of the proposed PC layer over standard transformers in Llama-1B pre-training, for both the AdamW and Muon optimizers. Theoretically, we justify this spectrum-control principle by proving that uniformly bounding each layer's singular values ensures geometric convergence of gradient descent to global minima, for certain deep linear networks. Our code is available at https://github.com/Empath-aln/PC-layer.",
+      "id": "2606.07512v1",
+      "title": "MemDreamer: Decoupling Perception and Reasoning for Long Video Understanding via Hierarchical Graph Memory and Agentic Retrieval Mechanism",
+      "summary": "Current Vision-Language Models struggle with hours-long videos because processing full-length visual sequences induces prohibitive token explosion and attention dilution. To overcome this, we introduce MemDreamer to decouple perception and reasoning, shifting long-video understanding into an agentic exploration process. As a plug-and-play framework, it incrementally streams videos to construct a Hierarchical Graph Memory, a top-down three-tier architecture for semantic abstraction, anchored by a foundational graph capturing spatiotemporal and causal relations. During inference, the reasoning model employs agentic tool-augmented retrieval, navigating hierarchies, searching nodes, and traversing logical edges via an Observation-Reason-Action loop. Experiments show MemDreamer achieves SOTA results across four mainstream benchmarks, narrowing the gap with human experts to only 3.7 points. It constrains the reasoning context window to merely 2% of full-context ingestion while delivering a 12.5 point absolute accuracy gain. Furthermore, statistical analysis uncovers a strong positive linear correlation between an VLM's performance on logic reasoning and long-video understanding benchmarks, establishing agentic capability scaling as a new paradigm for multimodal comprehension.",
       "authors": [
-        "Senmiao Wang",
-        "Tiantian Fang",
-        "Haoran Zhang",
-        "Yushun Zhang",
-        "Kunxiang Zhao"
+        "Cong Chen",
+        "Guo Gan",
+        "Kaixiang Ji",
+        "ChaoYang Zhang",
+        "Zhen Yang"
       ],
-      "published": "2026-06-04T17:55:11Z",
-      "updated": "2026-06-04T17:55:11Z",
-      "url": "http://arxiv.org/abs/2606.06470v1",
+      "published": "2026-06-05T17:59:21Z",
+      "updated": "2026-06-05T17:59:21Z",
+      "url": "http://arxiv.org/abs/2606.07512v1",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07502v1",
+      "title": "Your UnEmbedding Matrix is Secretly a Feature Lens for Text Embeddings",
+      "summary": "Large language models exhibit impressive zero-shot capabilities across a wide range of downstream tasks. However, they struggle to function as off-the-shelf embedding models, leading to suboptimal performance on massive text embedding benchmarks. In this paper, we identify a potential cause underlying this deficiency. Our motivation stems from an unexpected observation: text embeddings tend to align with frequent but uninformative tokens when projected onto the vocabulary space. We argue that this excessive expression of high-frequency tokens suppresses the model's ability to capture nuanced semantics. To address this, we introduce EmbedFilter, a simple linear transformation designed to refine text embeddings derived from LLMs directly. Specifically, we uncover that the unembedding matrix within LLMs encodes a latent space that is actively writing these frequent tokens into embedding space. By filtering out this subspace, EmbedFilter suppress the influence of high-frequency tokens, thereby enhancing semantic representations. As a compelling byproduct, this enables an inherent dimensionality reduction, lowering index storage and speedup retrieval while fully preserving the refined embedding quality. Our experiments across multiple LLM backbones demonstrate that LLMs equipped with EmbedFilter achieve superior zero-shot downstream performance even with significantly reduced embedding dimensions. We hope our findings provide deeper insights into the mechanisms of LLM-based representations and inspire more principled designs to improve text embeddings training. Our code is available at https://github.com/CentreChen/EmbFilter.",
+      "authors": [
+        "Songhao Wu",
+        "Zhongxin Chen",
+        "Yuxuan Liu",
+        "Heng Cui",
+        "Cong Li"
+      ],
+      "published": "2026-06-05T17:54:32Z",
+      "updated": "2026-06-05T17:54:32Z",
+      "url": "http://arxiv.org/abs/2606.07502v1",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "RAG"
+      ]
+    },
+    {
+      "id": "2606.07500v1",
+      "title": "Sparse Subspace-to-Expert Sharing for Task-Agnostic Continual Learning",
+      "summary": "Continual learning in Large Language Models (LLMs) is hindered by the plasticity-stability dilemma, where acquiring new capabilities often leads to catastrophic forgetting of previous knowledge. Existing methods typically treat parameters uniformly, failing to distinguish between specific task knowledge and shared capabilities. We introduce Mixture of Sparse Experts for Task Agnostic Continual Learning (SETA), a framework that resolves the plasticity-stability conflict through adaptive sparse subspace decomposition into task-specific expert modules. Unlike standard updates, where tasks compete for the same parameters, SETA separates knowledge into unique experts, designed to isolate task-specific patterns, and shared experts, responsible for capturing common features. This structure is maintained through adaptive elastic anchoring and a routing-aware regularization that jointly protect shared knowledge at both the weight and routing levels and enable a unified gating network to automatically retrieve the correct expert combination during inference. Extensive experiments across diverse domain-specific benchmarks demonstrate that SETA achieves competitive or superior overall performance relative to state-of-the-art continual learning baselines, with particularly strong retention of early-task knowledge and improved backward transfer on LLaMA-2 7B and Qwen3-4B.",
+      "authors": [
+        "Fatema Siddika",
+        "Md Anwar Hossen",
+        "Tanwi Mallick",
+        "Ali Jannesari"
+      ],
+      "published": "2026-06-05T17:53:52Z",
+      "updated": "2026-06-05T17:53:52Z",
+      "url": "http://arxiv.org/abs/2606.07500v1",
       "categories": [
         "cs.LG",
         "cs.AI"
@@ -165,109 +141,19 @@
       ]
     },
     {
-      "id": "2606.06468v1",
-      "title": "Goedel-Architect: Streamlining Formal Theorem Proving with Blueprint Generation and Refinement",
-      "summary": "We introduce Goedel-Architect, an agentic framework for formal theorem proving in Lean 4 centered on blueprint generation and refinement. A blueprint is a dependency graph of definitions and lemmas that builds up to the main theorem. First, Goedel-Architect generates a blueprint of formally stated definitions and lemmas, along with declared dependencies. This blueprint is optionally guided by a natural language proof. Then, a tool-equipped Lean prover component closes each open lemma node in parallel using relevant dependencies. Failed lemmas in turn drive refinement of the global blueprint. This strategy contrasts with other mainstream approaches which use recursive lemma decomposition, and can inefficiently loop on dead-end strategies. Using the open-weight DeepSeek-V4-Flash (284B-A13B) as the backbone, Goedel-Architect attains 99.2% pass@1 on MiniF2F-test and 75.6% pass@1 on PutnamBench. With an optional natural-language proof seeding the initial blueprint on the harder problems, we additionally close the remaining two MiniF2F-test problems (reaching 100%), lift PutnamBench to 88.8% (597/672), and solve 4/6 on IMO 2025, 11/12 on Putnam 2025, and 3/6 on USAMO 2026. This represents state-of-the-art performance for an open-source pipeline at a price point up to 500x less than comparable open-source pipelines.",
+      "id": "2606.07496v1",
+      "title": "Accelerated Decentralized Stochastic Gradient Descent for Strongly Convex Optimization",
+      "summary": "Decentralized stochastic optimization is a fundamental paradigm for large-scale learning over networks, where agents communicate only with their neighbors and no central coordinator is required. For strongly convex problems, communication efficiency is mainly determined by the condition number \\(κ=L/μ\\) and the network spectral gap \\(1-β\\). Although deterministic decentralized methods can simultaneously achieve accelerated \\(\\sqrtκ\\) and \\(1/\\sqrt{1-β}\\) dependences, no existing stochastic method attains both improvements at once. In this paper, we propose \\emph{Multi-Gossip Accelerated DSGD} (MG-ADSGD), a decentralized stochastic algorithm that combines Nesterov-type primal--dual extrapolation with multi-round fast gossip averaging. The key idea is to couple the gossip depth with the mini-batch size so that additional communication rounds simultaneously improve consensus accuracy and reduce gradient variance. We show that MG-ADSGD achieves the communication complexity \\[ \\widetilde{\\mathcal O}\\!\\left( \\frac{σ^2}{μnε}\\log\\frac{1}ε + \\sqrt{\\fracκ{1-β}}\\log\\frac{1}ε \\right), \\] where \\(ε\\) denotes the target accuracy, \\(n\\) is the number of nodes, and \\(σ^2\\) is the gradient variance. To the best of our knowledge, this bound yields the best currently available communication complexity for decentralized stochastic strongly convex optimization, up to logarithmic factors that are independent of $ε$.",
       "authors": [
-        "Jui-Hui Chung",
-        "Ziyang Cai",
-        "Zihao Li",
-        "Qishuo Yin",
-        "Rohit Agarwal"
+        "Ming Sun",
+        "Kun Yuan"
       ],
-      "published": "2026-06-04T17:54:44Z",
-      "updated": "2026-06-04T17:54:44Z",
-      "url": "http://arxiv.org/abs/2606.06468v1",
+      "published": "2026-06-05T17:51:11Z",
+      "updated": "2026-06-05T17:51:11Z",
+      "url": "http://arxiv.org/abs/2606.07496v1",
       "categories": [
-        "cs.AI"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2606.06467v1",
-      "title": "You Only Index Once: Cross-Layer Sparse Attention with Shared Routing",
-      "summary": "Long-context inference in modern LLMs is increasingly constrained by decoding efficiency, especially in reasoning-heavy settings where models generate long intermediate chains of thought. Existing sparse attention methods often face a practical efficiency-quality trade-off. Structured block sparse methods typically provide stronger acceleration but incur noticeable quality loss, while token sparse methods are usually more accurate yet deliver limited end-to-end speedup because top-k routing over the full cache remains expensive. In this work, we propose cross-layer sparse attention (CLSA), which is built on top of KV-sharing architectures such as YOCO. The core idea is to share not only the KV cache across cross-decoder layers, but also the routing index. A single indexer computes token-level top-k selection once and reuses the resulting index across layers, thereby preserving the fine-grained selectivity of token sparse attention while amortizing the routing overhead. The resulting architecture improves all major inference bottlenecks jointly, including pre-filling, KV-cache storage, and long-context decoding. Experiments across short-context and long-context benchmarks show that CLSA is both accurate and efficient, achieving up to 7.6x decoding speedup and 17.1x overall throughput improvement at 128K context. These results suggest a more complete architectural solution for long-context LLMs that jointly advances model quality and inference efficiency.",
-      "authors": [
-        "Yutao Sun",
-        "Yanqi Zhang",
-        "Li Dong",
-        "Jianyong Wang",
-        "Furu Wei"
-      ],
-      "published": "2026-06-04T17:54:04Z",
-      "updated": "2026-06-04T17:54:04Z",
-      "url": "http://arxiv.org/abs/2606.06467v1",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "RAG"
-      ]
-    },
-    {
-      "id": "2606.06464v1",
-      "title": "Human Adults and LLMs as Scientists: Who Benefits from Active Exploration?",
-      "summary": "A long-standing finding in the causal learning literature is that adults struggle to identify conjunctive causal rules, where an effect requires the simultaneous presence of multiple causes, while performing better in disjunctive settings. However, most demonstrations of this ``conjunctive handicap'' rely on passive observation paradigms with limited evidence, where learners have no control over evidence generation. This paper asks whether this bias persists when adults are granted agency through active exploration. Using a modified ``blicket detector'' task, adult participants freely intervened to identify causal objects under conjunctive or disjunctive rule structures. We show that active exploration substantially improves adults' conjunctive causal reasoning, although conjunctive rules still require more tests to infer than disjunctive rules. We further compare human performance to a range of large language models in the same setting. While some state-of-the-art models approach human-level performance on hypothesis inference accuracy, they often exhibit less efficient exploration strategies and similar conjunctive-disjunctive performance gaps.",
-      "authors": [
-        "Mandana Samiei",
-        "Eunice Yiu",
-        "Anthony GX-Chen",
-        "Dongyan Lin",
-        "Jocelyn Shen"
-      ],
-      "published": "2026-06-04T17:53:36Z",
-      "updated": "2026-06-04T17:53:36Z",
-      "url": "http://arxiv.org/abs/2606.06464v1",
-      "categories": [
-        "cs.CL"
-      ],
-      "matched_keywords": [
-        "LLM"
-      ]
-    },
-    {
-      "id": "2606.06462v1",
-      "title": "Benchmark Everything Everywhere All at Once",
-      "summary": "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability. Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among state-of-the-art models. To address these challenges, we introduce Benchmark Agent, a fully autonomous agentic system designed for benchmark building. Our framework orchestrates the complete benchmark construction pipeline, from user query analysis and subtask design to data annotation and quality control. To assess Benchmark Agent, we implement it to produce 15 representative benchmarks, spanning diverse evaluation scenarios, including text understanding, multimodal understanding, and domain-specific reasoning. Extensive experiments, including human evaluation, LLM-as-a-judge assessment, and consistency checks, demonstrate Benchmark Agent can generate high-quality benchmark samples with minimal human involvement. More importantly, through continual evaluation, we observe several insightful findings, including that current models struggle with certain domain-specific reasoning tasks. We believe that rapidly evolving benchmarks can contribute significantly to the research community. The preview and code will be publicly available at the demo page and code repository.",
-      "authors": [
-        "Shiyun Xiong",
-        "Dongming Wu",
-        "Peiwen Sun",
-        "Yuang Ai",
-        "Bokang Yang"
-      ],
-      "published": "2026-06-04T17:52:04Z",
-      "updated": "2026-06-04T17:52:04Z",
-      "url": "http://arxiv.org/abs/2606.06462v1",
-      "categories": [
-        "cs.AI"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2606.06461v1",
-      "title": "Flow-based Policy Adaptation without Policy Updates",
-      "summary": "Leveraging prior knowledge from pretrained policies, foundation models, or human operators offers an efficient alternative to learning robot skills from scratch. However, these agents often provide actions that are suboptimal, noisy, or misaligned with task-specific expert behavior. We propose GLOVES, a family of flow-based adaptation methods that correct non-expert actions by transporting them toward an expert action distribution. Rather than replacing agentic control with full autonomy, GLOVES performs selective action-level adaptation, improving task success while preserving agent intent. The learned flow also provides a natural in-distribution scoring mechanism through reverse flow evaluation. We use this signal as an intervention gate: actions that appear consistent with the expert distribution are passed through unchanged, while anomalous or out-of-distribution (OOD) actions are corrected. In this way, assistance is only provided when necessary. GLOVES requires only limited expert supervision, using a small number of demonstrations or reusable successful skill segments. By learning local expert action patterns and stitching them during execution, GLOVES provides a lightweight shared-control module for robust action adaptation across tasks and environments. Code and demos are available at ripl.github.io/GLOVES_web.",
-      "authors": [
-        "Luzhe Sun",
-        "Jingtian Ji",
-        "Haoran Chen",
-        "Jiawei Zhou",
-        "Matthew R. Walter"
-      ],
-      "published": "2026-06-04T17:51:12Z",
-      "updated": "2026-06-04T17:51:12Z",
-      "url": "http://arxiv.org/abs/2606.06461v1",
-      "categories": [
-        "cs.RO"
+        "cs.LG",
+        "math.OC"
       ],
       "matched_keywords": [
         "RAG",
@@ -275,17 +161,122 @@
       ]
     },
     {
-      "id": "2606.06460v1",
-      "title": "Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals",
-      "summary": "As autonomous LLM agents increasingly hold real credentials and operate infrastructure without a human in the loop, operators have no standard way to tell an agent that a resource is off-limits. Access controls either let the agent in (it has valid credentials) or hard-fail it (indistinguishable from any other client). We propose a third mode: a lightweight, published in-band deny signal -- the Recuse Signal -- that a server emits over a protocol's existing channels (an SSH banner, a PostgreSQL NOTICE) asking a connecting automated agent to voluntarily withdraw. This is a cooperative governance control, the robots.txt analogue for live access; it is explicitly not a security boundary. Its value is entirely empirical and, to our knowledge, unmeasured: do compliant LLM agents actually honor such a signal? We define the signal as an open mini-standard, implement two zero- or low-footprint adapters (an SSH banner/PAM hook and a PostgreSQL wire-protocol proxy), deploy them on a live production host, and run a controlled experiment in which fresh agents are given a benign operations task and observed for recusal. In a pilot (SSH; OpenAI GPT-4o and GPT-4o-mini; and Claude Code as a deployed agent), the signal cleanly induces recusal -- 100% recusal when present versus 100% task completion in a no-signal control -- and, revealingly, behaves as a cooperative rather than absolute signal: an explicit operator-authorization framing flips the most capable model to proceed, while other agents continue to defer to the on-host policy. We release the standard, adapters, and experiment harness for reproduction.",
+      "id": "2606.07489v1",
+      "title": "How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope",
+      "summary": "Frontier AI systems are bridging the gap between intelligence and utility by shifting from conversational assistants to autonomous agents that execute tasks end to end. Using production data from Perplexity's Search and Computer products, we study this transition by examining how AI agents accelerate and reshape knowledge work. Three key empirical findings emerge. First, using sessions with near-identical initial query pairs as natural experiments for the same underlying task attempted with both products, Computer performs 26 minutes of autonomous work per user session, versus 33 seconds for Search. Computer automates task decomposition and execution that Search users might otherwise manually orchestrate and implement. As a result, Computer shifts follow-up query distribution toward higher-order work such as verification and extension. Autonomy also increases execution quality, with per-query dissatisfaction rates 55% lower on Computer than on Search. Second, due to its autonomy advantage, Computer reduces completion time from 269 to 36 minutes on matched tasks, lowering estimated time and cost by 87% and 94%, respectively, compared to humans equipped with Search alone. Third, Computer changes the scope of work that users attempt: Computer queries more often cross occupational boundaries, require higher-order cognition, draw on broader expertise, take the form of composite tasks that bundle interdependent subtasks into a single query, and unlock work activities that are essentially absent from Search usage among the same users. Together, the evidence indicates that AI agents accelerate workflows, enhance output quality, reduce costs, and expand the breadth and depth of automated work.",
       "authors": [
-        "Thamilvendhan Munirathinam"
+        "Jeremy Yang",
+        "Kate Zyskowski",
+        "Noah Yonack",
+        "Jerry Ma"
       ],
-      "published": "2026-06-04T17:50:54Z",
-      "updated": "2026-06-04T17:50:54Z",
-      "url": "http://arxiv.org/abs/2606.06460v1",
+      "published": "2026-06-05T17:45:39Z",
+      "updated": "2026-06-05T17:45:39Z",
+      "url": "http://arxiv.org/abs/2606.07489v1",
       "categories": [
-        "cs.CR",
+        "cs.AI",
+        "econ.GN"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07487v1",
+      "title": "Modelling Opinion Dynamics at Scale with Deep MARL",
+      "summary": "Modelling opinion dynamics typically relies on hand-crafted local interaction rules to study emergent macroscopic phenomena such as consensus and polarisation. In contrast, multi-agent reinforcement learning (MARL) enables agents to learn such behaviours directly by optimising simple rewards. To explore the potential of MARL for opinion dynamics, we introduce a GPU-accelerated consensus and truth-finding game that scales to populations of up to 1000 agents, comparable to many real-world social sub-networks. To prevent unrealistic conventions, we extend other-play to general-sum social interactions. We next validate our model on a subset of the Bluesky network by recovering agent importance structures from graph topology alone via a learned attention layer, finding that highly conforming populations most closely match human data. In large social media networks such high levels of conformity significantly reduce collective accuracy and promote dishonest agents that lie to fit in. By contrast, small, dynamic hunter-gatherer networks are less affected; here, conformity can even improve collective agreement. This suggests a mismatch between evolved human conformity heuristics and modern social media environments as a potential contributor to misinformation.",
+      "authors": [
+        "Lukas Seier",
+        "Brandon Kaplowitz",
+        "Sebastian Towers",
+        "Richard Bailey",
+        "Jakob Foerster"
+      ],
+      "published": "2026-06-05T17:42:24Z",
+      "updated": "2026-06-05T17:42:24Z",
+      "url": "http://arxiv.org/abs/2606.07487v1",
+      "categories": [
+        "cs.MA",
+        "cs.GT",
+        "cs.SI"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07486v1",
+      "title": "OPENPATH: A Supervisor--Specialist Agent System for Personalized, Accessible, and Multi-stop Urban Trip Planning",
+      "summary": "Urban trip-planning systems are commonly optimized for travel time and cost, but they offer limited support for the heterogeneous needs that real travelers bring, such as personalized preferences, multi-stop itinerary construction, and end-to-end wheelchair accessibility. We present openpaths, a supervisor-specialist multi-agent system that handles all of these tasks within a single architecture. openpaths adopts a deliberate division of labor: LLM agents parse natural-language input, classify request intent, and orchestrate execution, while classical algorithms perform route optimization over curated mobility and accessibility data. This design ensures that the resulting trip honors heterogeneous user preferences and enforces strict accessibility requirements when requested. Beyond per-user planning, openpaths doubles as a measurement instrument for city-scale accessibility analysis: applied to NYC, the system reveals substantial ADA infrastructure gaps and quantifies their effect on job accessibility for wheelchair users. Overall, this study shows how a supervisor-specialist LLM agentic framework can support heterogeneous trip planning and transparent, equitable transportation analysis in real urban environments.",
+      "authors": [
+        "Ziyang Xiong",
+        "He Zong",
+        "Zhiyuan Xue",
+        "Manxi Wu"
+      ],
+      "published": "2026-06-05T17:40:54Z",
+      "updated": "2026-06-05T17:40:54Z",
+      "url": "http://arxiv.org/abs/2606.07486v1",
+      "categories": [
+        "eess.SY"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07485v1",
+      "title": "Quantum correlations in QBism's reconstruction program",
+      "summary": "QBism recasts quantum theory as a normative framework for an agent's probability assignments, with the Born rule taking the form of a consistency condition known as the Urgleichung. Motivated by this perspective, qplex theories provide a broader class of probabilistic models in which the sets of valid states and measurements are constrained by QBist-inspired geometric conditions. While qplexes have been extensively studied for single systems, their implications for bipartite correlations remain largely unexplored. In this work, we investigate bipartite correlations in qplex theories by expressing joint expectation values as inner products between suitably defined $C$-vectors. This geometric formulation allows Bell-type inequalities to be studied as optimization problems over qplex-compatible probability assignments. We first analyze the CHSH scenario and show that the shared inner-product structure of the $C$-vectors restricts the maximal value to the Tsirelson bound $2\\sqrt{2}$. We then turn to the three-outcome CGLMP inequality $I_{2233}$ and find that the same qplex-derived norm and inner-product constraints allow the algebraic maximum of 4, thereby exhibiting superquantum correlations. These results show that qplex geometry captures enough structure to reproduce an important quantum bound in the two-outcome case, but not enough to recover the full set of quantum correlation constraints. The analysis therefore suggests that additional principles are needed to complete the QBist reconstruction of quantum theory.",
+      "authors": [
+        "Sachin Gupta",
+        "Jacques Pienaar"
+      ],
+      "published": "2026-06-05T17:39:45Z",
+      "updated": "2026-06-05T17:39:45Z",
+      "url": "http://arxiv.org/abs/2606.07485v1",
+      "categories": [
+        "quant-ph"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07479v1",
+      "title": "Supervision versus Demonstration-Based In-Context Learning for Multiword Expression Classification",
+      "summary": "Turkish idiomatic light verb constructions (LVCs) are challenging for multiword expression processing because they often share the same surface form as fully literal verb-object combinations while functioning as a single, partially idiomatic predicate. We frame Turkish LVC detection as a binary classification task (literal meaning vs. idiomatic meaning) and evaluate on a manually created controlled set (N=147) with matched negatives: out-of-domain random sentences and in-domain literal controls (NLVC), alongside LVC positives. We compare a supervised Turkish encoder baseline (BERTurk with a classifier head) to three instruction-tuned LLMs from different families under zero-shot, one-shot, and few-shot prompting, and analyze how demonstrations shift error profiles. In zero-shot, LLMs perform well on negatives but show very low LVC recall. One-shot prompting sharply improves LVC detection but can induce strong, model-specific biases, leading models to overpredict or underpredict LVCs. A richer few-shot prompt improves calibration and yields robust overall performance for GPT-OSS-20B and Qwen 2.5-14B. Overall, the results highlight substantial prompt sensitivity in Turkish metalinguistic classification: the supervised baseline remains competitive, while prompted LLMs can match or exceed it on LVCs with carefully constructed demonstrations.",
+      "authors": [
+        "Sercan Karakaş",
+        "Yusuf Şimşek"
+      ],
+      "published": "2026-06-05T17:34:07Z",
+      "updated": "2026-06-05T17:34:07Z",
+      "url": "http://arxiv.org/abs/2606.07479v1",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_keywords": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "2606.07462v1",
+      "title": "Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle",
+      "summary": "As foundation models advance and agent scaffolding becomes increasingly sophisticated, agents have demonstrated remarkable proficiency in complex, long-horizon coding tasks and even autonomous experiment execution. Despite their evolution from research assistants into autonomous research agents, these systems still exhibit significant limitations in field sensitivity, research ethics, and nuanced scientific judgment. Consequently, frontier agents remain unable to fully replace human researchers. To bridge this gap, we conceptualize the AARR (Act As a Real Researcher) benchmark series. Unlike existing benchmarks that primarily assess macro-level execution capabilities, AARR focuses on whether agents can emulate the professionalism, thoroughness, and nuanced reasoning that characterize human researchers in granular research scenarios. In this work, we propose AARRI-Bench (Act As a Real Research Intern), the first benchmark in this series. We conduct extensive experiments across frontier models and agentic systems, revealing that even the best-performing configuration (Mini-SWE-Agent with Claude Opus 4.7) achieves only 68.3\\% success rate, frequently overlooking subtle yet critical details that are obvious to real human researchers. Our results indicate that developing researcher-like AI requires further exploration of research behavior, rather than merely complex scaffolding. Our data is released at https://github.com/AARR-bench/AARRI-bench.",
+      "authors": [
+        "Jiayu Wang",
+        "Weijiang Lv",
+        "Bowen Fu",
+        "Jing Fu",
+        "Jiayi Song"
+      ],
+      "published": "2026-06-05T17:13:36Z",
+      "updated": "2026-06-05T17:13:36Z",
+      "url": "http://arxiv.org/abs/2606.07462v1",
+      "categories": [
         "cs.AI"
       ],
       "matched_keywords": [
@@ -295,17 +286,41 @@
       ]
     },
     {
-      "id": "2606.06454v1",
-      "title": "Scaffold, Not Vocabulary? A Controlled, Two-Tier, Pre-Registered Study of a Popperian Code-Generation Skill",
-      "summary": "Large language models increasingly write, review, and judge code, and a fast-growing practice equips them with prompt 'skills' that ask the model to reason like a scientist. A prominent example tells the model to act as a Popperian falsificationist, and such skills are reported to improve generated code. But these gains are almost always read off an LLM-as-a-judge, an instrument with documented positional, self-preference, and stylistic biases. We ask: if it appears to help, is the gain from the skill's Popperian content, or from the structure any scaffold imposes? We pre-register a two-tier ablation with three controls: a length-matched placebo, a labels-only scaffold that keeps the Popperian headers but strips the procedure, and an execution oracle (HumanEval+ unit tests), plus a vocabulary-halo sentinel and a same-model self-judge audit. On a frontier model (Claude Sonnet 4.6, N=163) all conditions sit near the benchmark ceiling and do not separate, so the pre-registered +5-point improvement is not supported (a ceiling-limited non-detection). On a small model (Qwen2.5-Coder-0.5B, N=164) structured arms lift best-of-eight correctness by 20-22 points, but the full skill shows no separable benefit over a labels-only scaffold (aggregate F@8=L@8 vs V@8=34.8%), and the placebo trails by only 2.4 points. A 0.5B self-judge applying the Popperian rubric does not beat random selection and concentrates 60% of its picks on one index. In the two settings tested, the skill's Popperian procedural content adds no separable execution-correctness benefit beyond a labels-only scaffold, so the gains track scaffold structure. We contribute a calibrated negative result and a reusable disambiguation protocol; the finding bounds an engineering claim about one prompt-skill family and is not an evaluation of Popperian methodology in general.",
+      "id": "2606.07448v1",
+      "title": "Agentic Very Much! Adoption of Coding Agent in New GitHub Projects",
+      "summary": "In previous work, we investigated the adoption of coding agents in GitHub projects, finding that it was very significant. This study follows this line of work, but analyses new projects, that were created after the previous study. In this new sample, we find that the adoption of coding agents is more than twice as high. We also find that the adoption is significantly more intensive, as the proportion of AI-assisted commits is sensibly higher, despite strong signs that we do not detect all of it.",
       "authors": [
-        "Mehmet Iscan"
+        "Romain Robbes",
+        "Théo Matricon",
+        "Thomas Degueule",
+        "Andre Hora",
+        "Stefano Zacchiroli"
       ],
-      "published": "2026-06-04T17:49:00Z",
-      "updated": "2026-06-04T17:49:00Z",
-      "url": "http://arxiv.org/abs/2606.06454v1",
+      "published": "2026-06-05T16:51:25Z",
+      "updated": "2026-06-05T16:51:25Z",
+      "url": "http://arxiv.org/abs/2606.07448v1",
       "categories": [
-        "cs.SE",
+        "cs.SE"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07441v1",
+      "title": "Sycophantic Praise: Evaluating Excessive Praise in Language Models",
+      "summary": "Sycophancy in language models is typically studied as excessive agreement or validation, while explicit praise and flattery have received comparatively little attention. We argue that sycophantic praise is a distinct alignment problem that cannot be reliably measured using current methods. We introduce a parameterized framework that measures whether praise is excessive relative to contribution quality and expected user ability. We show that our framework substantially outperforms generic LLM judges in agreement with human annotations, and that sycophantic praise occurs far more frequently in social and interpretive domains than in objective reasoning settings. Together, these findings position praise calibration as a distinct alignment challenge.",
+      "authors": [
+        "Daniel Vennemeyer",
+        "Phan Anh Duong",
+        "Meryl Ye",
+        "Ruihong Huang",
+        "Tianyu Jiang"
+      ],
+      "published": "2026-06-05T16:38:45Z",
+      "updated": "2026-06-05T16:38:45Z",
+      "url": "http://arxiv.org/abs/2606.07441v1",
+      "categories": [
         "cs.CL"
       ],
       "matched_keywords": [
@@ -313,21 +328,46 @@
       ]
     },
     {
-      "id": "2606.06453v1",
-      "title": "Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents",
-      "summary": "Sparse attention is becoming increasingly important for serving large language models (LLMs) as generation lengths continue to grow. However, deploying and evaluating new sparse attention algorithms at scale remains highly engineering-intensive, slowing both human researchers and AI agents in exploring the sparse attention design. To address this challenge, we present Vortex, a system that combines a Python-embedded frontend language atop a page-centric tensor abstraction for expressing a broad range of sparse attention algorithms, with an efficient backend tightly integrated into modern LLM serving stacks. Vortex enables rapid prototyping, deployment, and evaluation of sparse attention algorithms, effectively translating their theoretical efficiency gains into real-world throughput improvements. As a result, Vortex substantially accelerates the design and iteration of sparse attention algorithms. First, AI agents use Vortex to automatically generate and refine diverse algorithms, the best reaching up to $3.46\\times$ higher throughput than full attention while preserving accuracy. Second, Vortex extends sparse attention to emerging architectures and very large models that are otherwise hard to experiment with, reaching up to $4.7\\times$ higher throughput on the MLA-based GLM-4.7-Flash and $1.37\\times$ on the 229B-parameter MiniMax-M2.7 on NVIDIA B200 GPUs.",
+      "id": "2606.07437v1",
+      "title": "Re-imagining ISO 26262 in the Age of Autonomous Vehicles: Enhancing Controllability through Transferability and Predictability",
+      "summary": "The ISO 26262 standard defines functional safety for road vehicles through risk assessments based on Severity, Exposure, and Controllability, grounded in a human-driven vehicle paradigm. In the context of autonomous vehicles (AVs), the absence of a human driver necessitates revisiting these principles. This paper decomposes the Controllability placeholder into two auditable evidence dimensions of ISO 26262 by introducing two measurable sub-concepts: Transferability and Predictability. Transferability extends Controllability to capture AV systems' ability to hand off control to dedicated fallback safety mechanisms, while Predictability captures how easily external agents can anticipate AV behavior. Predictability is formally defined from human-robot interaction-inspired principles, and a mathematical framework is provided to quantify it. A designed-versus-achievable gap is introduced to distinguish architectural fallback claims from scene-conditioned achievable fallback capability. The proposed metrics align with ISO 26262 and ISO/PAS 21448 (SOTIF), rendering fallback and interaction claims falsifiable and traceable across ODD slices. These dimensions complement rather than replace existing standards, and the enhancements preserve the structure of ISO 26262 while extending its applicability to driverless automated systems operating at SAE Levels 4 and 5.",
       "authors": [
-        "Zhuoming Chen",
-        "Xinrui Zhong",
-        "Qilong Feng",
-        "Ranajoy Sadhukhan",
-        "Yang Zhou"
+        "Chaitanya Shinde",
+        "Hadi Hajieghrary",
+        "Paul Schmitt",
+        "Adam Shoemaker",
+        "Bodo Seifert"
       ],
-      "published": "2026-06-04T17:48:17Z",
-      "updated": "2026-06-04T17:48:17Z",
-      "url": "http://arxiv.org/abs/2606.06453v1",
+      "published": "2026-06-05T16:35:58Z",
+      "updated": "2026-06-05T16:35:58Z",
+      "url": "http://arxiv.org/abs/2606.07437v1",
       "categories": [
-        "cs.AI"
+        "cs.RO",
+        "cs.AI",
+        "cs.HC",
+        "cs.SE",
+        "eess.SY"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2606.07436v1",
+      "title": "Skill-3D: Evolving Scene-Aware Skills for Agentic 3D Spatial Reasoning",
+      "summary": "This paper explores agentic 3D spatial understanding, i.e., MLLM agents performing 3D reasoning through tool use. Existing methods often misuse tools and exhibit biased tool preferences under 3D scenarios, leaving the agentic paradigm with only marginal gains over non-agentic strategies. We reveal that 3D spatial reasoning tasks are heterogeneous across scenes, while these agents apply a uniform tool-use strategy to all scenes rather than selecting tools according to the specific scene and task. To address this, we propose Skill-3D, a framework that learns self-evolving scene-aware skills. Specifically, Skill-3D identifies the task scene and records the agent's tool-use trajectory into a Scene Memory, where successful trajectories from similar scenes are aggregated and distilled into a reusable scene-aware skill, with failed ones attached to the skill as lessons. During training, once a similar scene recurs, the corresponding skill is injected to guide the agent, producing new trajectories whose successes and failures further refine the skill, forming a loop in which the memory and the skill library co-evolve. Experiments show that Skill-3D substantially improves tool utilization in 3D spatial reasoning (from 39% to 78% on VSI-Bench), driving the agent toward correct and sufficient tool use. For instance, it improves Gemini-3-Flash by 67% on MMSI-Bench. Furthermore, we conduct agentic post-training over skill-guided trajectories, which boosts Qwen3-VL-8B by 43% on VSI-Bench.",
+      "authors": [
+        "Haoyuan Li",
+        "Zhengdong Hu",
+        "Jun Wang",
+        "Hehe Fan",
+        "Yi Yang"
+      ],
+      "published": "2026-06-05T16:33:44Z",
+      "updated": "2026-06-05T16:33:44Z",
+      "url": "http://arxiv.org/abs/2606.07436v1",
+      "categories": [
+        "cs.CV"
       ],
       "matched_keywords": [
         "LLM",
@@ -335,114 +375,68 @@
       ]
     },
     {
-      "id": "2606.06451v1",
-      "title": "Simultaneous EF1 and approximate MMS allocations for submodular valuations",
-      "summary": "There are two common classes of fairness notions that are considered when allocating $m$ indivisible items to $n$ agents of equal entitlements. One is that of share-based fairness notions, with the maximin share (MMS) and its relaxations to $ρ$-MMS being prominent representatives of this class. The other is that of comparison-based fairness notions, with envy-freeness (EF) and its relaxations such as EF1 being prominent representatives of this class. In general, no class offers good guarantees for the other class. In this work, we design allocations that simultaneously satisfy notions from both classes, and specifically, are $ρ$-MMS for constant $ρ$ and EF1 (in fact, also EFL). Such results were previously known when agents have additive valuations, and we prove such results for the more general class of submodular valuations.",
+      "id": "2606.07434v1",
+      "title": "Evidence Markets",
+      "summary": "Modern prediction markets face two limitations that restrict their applicability in a range of settings:~(i)~they reveal what the crowd believes but not the evidence or reasoning behind those beliefs, and~(ii)~they require an event with an external ground truth that resolves at a known future date. We address these twin challenges by introducing evidence markets, a generalization of prediction markets that incentivizes the submission of evidence alongside beliefs and can be endogenously resolved using the crowd-sourced evidence if external resolution is not possible. At its core, the market uses a logarithmic market scoring rule whose liquidity parameter changes dynamically with the accumulated evidence quality. We prove that platform loss is bounded, evidence is rewarded proportional to the current market uncertainty, and can be equivalently implemented through an automated market maker. In the case where the marker resolves endogenously based on submitted evidence, we characterize how withholding evidence shifts a trader's belief about resolution and use it to prove truthful belief and evidence reporting is a always an $\\varepsilon$-dominant strategy incentive compatible (DSIC) strategy. To address operational considerations, we propose evidence verification via an LLM-as-a-Judge framework with staking and give an asynchronous execution algorithm that is not bottle-necked by verification. Throughout the work, we use LLM evaluations -- determining which model is best for a given task -- as a salient and representative running example for our proposed market.",
       "authors": [
-        "Uriel Feige",
-        "Assaf Fine"
+        "Safwan Hossain",
+        "Gabriel Andrade",
+        "Chengqi Zang",
+        "Yiling Chen"
       ],
-      "published": "2026-06-04T17:47:59Z",
-      "updated": "2026-06-04T17:47:59Z",
-      "url": "http://arxiv.org/abs/2606.06451v1",
+      "published": "2026-06-05T16:33:11Z",
+      "updated": "2026-06-05T16:33:11Z",
+      "url": "http://arxiv.org/abs/2606.07434v1",
       "categories": [
         "cs.GT"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2606.06448v1",
-      "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads",
-      "summary": "LLM agents are increasingly deployed on long-horizon tasks requiring sustained reasoning over extended interaction histories. Realizing this at scale requires agents to persistently store, retrieve, and update their own memory across sessions. A rich ecosystem of agent memory systems has emerged spanning flat retrieval, LLM-mediated extraction, consolidating fact stores, and agentic control flows. Yet, their system-level behavior remains uncharacterized. We present the first systems characterization of agent memory. First, we introduce a system-oriented taxonomy classifying agent memory systems along four axes. Second, we build a phase-aware profiling harness attributing cost to construction, retrieval, and generation. Third, we characterize ten representative systems across two benchmark suites, uncovering how design choices shift cost across the write and read paths. Finally, we derive 10 system recommendations covering construction scheduling, capability floors, amortization via query volume, freshness-latency tradeoffs, and fleet-scale management.",
-      "authors": [
-        "Yasmine Omri",
-        "Ziyu Gan",
-        "Zachary Broveak",
-        "Robin Geens",
-        "Zexue He"
-      ],
-      "published": "2026-06-04T17:44:18Z",
-      "updated": "2026-06-04T17:44:18Z",
-      "url": "http://arxiv.org/abs/2606.06448v1",
-      "categories": [
-        "cs.AI"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "Agent",
-        "Harness"
-      ]
-    },
-    {
-      "id": "2606.06447v1",
-      "title": "Latent Reasoning with Normalizing Flows",
-      "summary": "Large language models often improve reasoning by generating explicit chain-of-thought (CoT), demonstrating the importance of intermediate computation. However, textual CoT forces this computation through a discrete, serial, and communication-oriented token stream: each reasoning step must be verbalized before the model can proceed, even when the underlying update is semantic, uncertain, or only partially formed. Latent reasoning offers a higher-bandwidth alternative by performing intermediate computation in compact continuous states before committing to text. Yet existing latent-reasoning methods often sacrifice key advantages that make CoT effective in autoregressive language models, including native left-to-right generation, probabilistic sampling, compatibility with KV-cache decoding, and tractable likelihood estimation. We propose NF-CoT, a latent reasoning framework that preserves these advantages by modeling continuous thoughts with normalizing flows. NF-CoT instantiates a TARFlow-style normalizing flow inside the LLM backbone, defining a tractable probability model over compact continuous thoughts distilled from explicit CoT. Continuous-thought positions are generated by an NF head, while text positions are generated by the standard LM head within the same causal stream. This design provides exact likelihoods for latent thoughts, enables probabilistic left-to-right decoding with the original KV cache, and supports direct policy-gradient optimization in the latent reasoning space. On code-generation benchmarks, NF-CoT improves pass rates over explicit-CoT and prior latent-reasoning baselines while substantially reducing intermediate-reasoning cost.",
-      "authors": [
-        "Guancheng Tu",
-        "Xiangjun Fu",
-        "Suhao Yu",
-        "Yao Tang",
-        "Haoqiang Kang"
-      ],
-      "published": "2026-06-04T17:44:17Z",
-      "updated": "2026-06-04T17:44:17Z",
-      "url": "http://arxiv.org/abs/2606.06447v1",
-      "categories": [
-        "cs.CL",
-        "cs.LG"
       ],
       "matched_keywords": [
         "LLM"
       ]
     },
     {
-      "id": "2606.06444v1",
-      "title": "USAD 2.0: Scaling Representation Distillation for Universal Audio Understanding",
-      "summary": "Audio encoders are critical to modern audio applications as large language models (LLMs) increasingly rely on a single encoder for diverse inputs. While self-supervised learning (SSL) has yielded strong domain-specific encoders like speech or music experts, multi-domain approaches like USAD and SPEAR remain limited in coverage and evaluation. Recent studies also suggest supervised encoders align better with audio LLMs. We present USAD 2.0, a universal encoder integrating knowledge from both SSL and supervised foundation models. USAD 2.0 introduces domain-aware distillation to address teacher mismatch, extends coverage to the music domain, and adds second-stage supervised distillation for downstream use. We further scale the model to one billion parameters via depth scaling. Experiments show USAD 2.0 achieves strong or state-of-the-art performance across probing and LLM-based evaluations.",
+      "id": "2606.07433v1",
+      "title": "Watch, Remember, Reason: Human-View Video Understanding with MLLMs",
+      "summary": "Video understanding is being rapidly transformed by multimodal large language models (MLLMs), as research moves from short clips to long, multimodal, and knowledge-intensive video scenarios. These scenarios require models to handle sparse evidence, long-range dependencies, multimodal alignment, and reliable inference under limited computational budgets. This work presents a human-view perspective on LLM-based video understanding, organized around three functional abilities: watching, remembering, and reasoning. Rather than treating video tasks as isolated benchmarks, this view provides a unified structure for analyzing how video MLLMs acquire evidence, preserve context, and produce grounded outputs. We introduce a formulation that characterizes video understanding systems by their perceptual representations, memory states, reasoning traces, and final predictions. Based on this formulation, we identify challenges in spatio-temporal perception, efficient long-video processing, memory modeling, streaming understanding, and faithful reasoning. Representative methods are organized by their roles in video MLLM systems. Watching covers fine-grained, comprehensive, audio-visual, and efficient perception. Remembering includes offline and streaming memory, while reasoning covers text-only reasoning and thinking with videos. We further examine application domains such as egocentric, sports, instructional, medical, and narrative videos, and cover training datasets and evaluation benchmarks across task types, supervision formats, modalities, and capability dimensions. Finally, we outline open problems and future directions for scalable, memory-aware, and evidence-grounded video intelligence. Related works will be continuously traced at https://github.com/marinero4972/Awesome-HumanView-VideoUnderstanding.",
       "authors": [
-        "Heng-Jui Chang",
-        "Alexander H. Liu",
-        "Saurabhchand Bhati",
-        "Mrudula Athi",
-        "Anton Ratnarajah"
+        "Jiahao Meng",
+        "Yue Tan",
+        "Qi Xu",
+        "Kuan Gao",
+        "Weisong Liu"
       ],
-      "published": "2026-06-04T17:42:05Z",
-      "updated": "2026-06-04T17:42:05Z",
-      "url": "http://arxiv.org/abs/2606.06444v1",
+      "published": "2026-06-05T16:29:13Z",
+      "updated": "2026-06-05T16:29:13Z",
+      "url": "http://arxiv.org/abs/2606.07433v1",
       "categories": [
-        "eess.AS",
-        "cs.CL",
-        "cs.SD"
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
       ],
       "matched_keywords": [
-        "LLM",
-        "RAG"
+        "LLM"
       ]
     },
     {
-      "id": "2606.06443v1",
-      "title": "Revising Context, Shifting Simulated Stance: Auditing LLM-Based Stance Simulation in Online Discussions",
-      "summary": "Large language models are increasingly used to simulate social media users and infer how individuals may respond to online discussions. However, it remains unclear whether these simulations reflect precise user-specific beliefs or whether they are highly sensitive to semantically independent changes in conversational contexts. In this work, we study counterfactual context revision as a framework for auditing LLM-based stance simulation. Given an original online conversation, we first infer a target user's stance toward a specific topic. We then apply controlled revision strategies to the conversational context and simulate the user's stance again under the revised context. We compare text-only revision strategies with a multimodal one that incorporates meme-based context and evaluate two main effectiveness metrics, i.e., average directional stance shift and stance transition rate. The results reveal effective and robust stance transitions in both text-only and multimodal strategies across different polarization-preference mechanisms. Our study contributes an evaluation framework for understanding the context sensitivity of LLM-based stance simulation. More broadly, it highlights both the promise and risk of using LLMs to simulate online opinion dynamics.",
+      "id": "2606.07422v1",
+      "title": "The Masked Advantage: Uncovering Local-Language Access to Cultural Knowledge in LLMs",
+      "summary": "Large language models are increasingly used to answer culturally grounded questions across languages, yet it remains unclear whether local cultural knowledge is better accessed through English or the local language. Existing evaluations face two key limitations: many rely on parallel template-based questions that may not reflect how cultural knowledge naturally appears, and raw accuracy conflates general language proficiency with language-conditioned knowledge access. We address these issues with a controlled framework built on real-world cultural questions collected from regional benchmarks and local sources. By crossing question type (culture-agnostic vs. culture-specific) with query language (English vs. local language), and estimating ability with a shared 1PL item response theory model, we separate proficiency from localized knowledge access. Across 13 locales and roughly 80 models, we find a consistent English advantage on culture-agnostic questions, indicating stronger English proficiency. However, after accounting for this proficiency gap, local languages show a positive knowledge-access advantage in nearly all locale-model settings. This advantage is often masked in raw accuracy but becomes more visible for frontier, regionally aligned, or language-adapted models. Our results suggest that weaker local-language performance does not necessarily imply weaker cultural knowledge; rather, local cultural knowledge may be more accessible through the local language but hidden by limited language proficiency.",
       "authors": [
-        "Xinnong Zhang",
-        "Wanting Shan",
-        "Hanjia Lyu",
-        "Zhongyu Wei",
-        "Jiebo Luo"
+        "Yang Zhang",
+        "Xiao Fei",
+        "Amr Mohamed",
+        "Sarah Almeida Carneiro",
+        "Mersin Konomi"
       ],
-      "published": "2026-06-04T17:41:54Z",
-      "updated": "2026-06-04T17:41:54Z",
-      "url": "http://arxiv.org/abs/2606.06443v1",
+      "published": "2026-06-05T16:16:59Z",
+      "updated": "2026-06-05T16:16:59Z",
+      "url": "http://arxiv.org/abs/2606.07422v1",
       "categories": [
         "cs.CL",
-        "cs.MM",
-        "cs.SI"
+        "cs.AI"
       ],
       "matched_keywords": [
-        "LLM",
-        "RAG"
+        "LLM"
       ]
     }
   ]
