@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T01:27:29.564514+00:00",
+  "updated_at": "2026-07-17T12:59:39.470917+00:00",
   "keywords": [
     "LLM",
     "RAG",
@@ -8,6 +8,223 @@
   ],
   "total": 20,
   "papers": [
+    {
+      "id": "2607.15277v1",
+      "title": "Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models",
+      "summary": "In-context learning is commonly interpreted as a form of conditional inference, in which the prompt specifies a context and the model's output is treated as an estimate of the corresponding conditional distribution. If this interpretation holds, then LLM estimates should satisfy basic probabilistic identities. In particular, the law of total probability asserts that prior-weighted conditional distributions aggregate into population-level marginals over any valid partition of the population. In this work, we investigate to what extent LLM estimates adhere to this self-consistency principle. We use binary trees as an evaluation scaffold to recursively partition a population into increasingly fine-grained subpopulations. We then prompt LLMs with verbalized subpopulation descriptions in context, aggregate the resulting estimates back into population-level estimates, and compare them across partitions of varying granularity. Applying this protocol across problem domains and state-of-the-art frontier models, we show widespread violations of basic consistency properties. An in-depth study of persona prompting reveals a pattern we call the macro fallacy: estimates reconstructed from more fine-grained subpopulation responses are often better aligned with human reference data than direct population-level estimates. This effect persists across variations in tree structure and estimation task, and can be partially recovered through implicit prompting. Together, these findings suggest that models possess relevant subpopulation knowledge but do not reliably propagate it into aggregate estimates. This gap establishes statistical self-consistency as an unsaturated, reference-free criterion for evaluating LLMs.",
+      "authors": [
+        "Patrik Wolf",
+        "Thomas Kleine Buening",
+        "Andreas Krause",
+        "Celestine Mendler-Dünner"
+      ],
+      "published": "2026-07-16T17:59:31Z",
+      "updated": "2026-07-16T17:59:31Z",
+      "url": "http://arxiv.org/abs/2607.15277v1",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_keywords": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "2607.15272v1",
+      "title": "SciDiagramEdit: Learning to Edit Scientific Diagrams from Paper Revisions",
+      "summary": "Editing the figures in a research paper is a routine and time-consuming part of everyday research practice: authors relabel components, rearrange panels, and restyle visuals as they revise their manuscripts. Automating this editing workflow under a natural-language instruction, however, is challenging, because a scientific figure is a dense infographic in which heterogeneous visual elements such as schematics, plots, photos, captions, and arrows are composed under a tight visual grammar to advance a specific argument. To address this, we present SciDiagramEdit, a benchmark and skill-evolution framework that learns from natural paper revisions and operates on the figure's editable vector source, where users can inspect and co-edit individual primitives alongside the agent. Our benchmark mines before/after figure pairs from arXiv version histories, each grounded in the authors' own revision intent. To accommodate the diversity of editing instructions, we adopt agentic learning via skill evolution: an agentic proposer continually refines the agent's skill specification from execution traces over multiple epochs. The resulting skill progressively lifts edit accuracy on a held-out validation set, providing evidence that natural paper revisions are an effective training signal for instruction-driven figure editing.",
+      "authors": [
+        "Yasheng Sun",
+        "Zezi Zeng",
+        "Yifan Yang",
+        "Chong Luo",
+        "Wenyi Wang"
+      ],
+      "published": "2026-07-16T17:58:36Z",
+      "updated": "2026-07-16T17:58:36Z",
+      "url": "http://arxiv.org/abs/2607.15272v1",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.15263v1",
+      "title": "Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents",
+      "summary": "Security-agent evaluations commonly measure peak offensive capability under generous inference budgets, emphasizing vulnerability discovery, exploit development, penetration testing, and CTF completion. Such measurements are useful but incomplete: in operational security, every reasoning step, tool call, telemetry query, and enrichment request consumes budget. We evaluate language-model security agents through this cost-success lens on offensive Cybench challenges and defensive Splunk BOTS v1 investigation challenges. Instead of reporting only best-case success, we compare models at fixed cost levels and decompose performance by inference spend and tool spend. Our results show distinct scalingregimes for red- and blue-team tasks. Offensive CTF performance improves with additional test-time compute, and scaled open-weight models can approach frontier proprietary systems while remaining cost-competitive. Defensive SOC investigation does not scale in the same way: success depends more heavily on disciplined tool use, telemetry navigation, and selective enrichment than on raw reasoning budget alone. We argue that security-agent benchmarks should measure economic efficiency and operational fit alongside task success. Cost-aware, SOC-native evaluations provide a clearer picture of which models are practically useful today and where defensive agents still need to improve. We present an interactive website with our results https://evals.frontier.security.",
+      "authors": [
+        "Paul Kassianik",
+        "Blaine Nelson",
+        "Yaron Singer"
+      ],
+      "published": "2026-07-16T17:54:47Z",
+      "updated": "2026-07-16T17:54:47Z",
+      "url": "http://arxiv.org/abs/2607.15263v1",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.15257v1",
+      "title": "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+      "summary": "Recent advances in Tool-Integrated Large Language Models have made web search a core capability of information-seeking agents. However, as interaction histories grow, agents increasingly struggle to track task progress. When search attempts fail to yield useful evidence, current single- and multi-agent systems can become trapped in repetitive loops, wasting search budgets and ultimately compromising the quality and completeness of the final output. We introduce SearchOS, a system-level multi-agent framework that turns fragile, implicit search progress into explicit, persistent, and shared state. First, we formulate open-domain information seeking as relational schema completion with grounded citations, where agents discover entities, populate attributes across linked tables, and anchor each value to source evidence. Then we design Search-Oriented Context Management (SOCM), which externalizes the evolving state into Frontier Task, an Evidence Graph, a Coverage Map, and Failure Memory. Built on SOCM, SearchOS applies a pipeline-parallel scheduling mechanism that overlaps the execution of sub-agents and continuously refills freed slots with tasks targeting unresolved coverage gaps to improve utilization and throughput. To schedule and control the execution of search agents, SearchOS introduces a Search Tool Middleware Harness that intercepts model and tool interactions to record grounded evidence and react to stalls or budget exhaustion, and provides a reusable hierarchical skill system comprising strategy and access skills to augment the agents' search process and avoid repeating failed search patterns across runs. On WideSearch and GISA, SearchOS leads all metrics among the evaluated single- and multi-agent baselines, paving the way toward robust information-seeking collaboration.",
+      "authors": [
+        "Yuyao Zhang",
+        "Junjie Gao",
+        "Zhengxian Wu",
+        "Jiaming Fan",
+        "Jin Zhang"
+      ],
+      "published": "2026-07-16T17:51:23Z",
+      "updated": "2026-07-16T17:51:23Z",
+      "url": "http://arxiv.org/abs/2607.15257v1",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "matched_keywords": [
+        "RAG",
+        "Agent",
+        "Harness"
+      ]
+    },
+    {
+      "id": "2607.15254v1",
+      "title": "teLLMe Why (Ain't Nothing but a Jam): Exploratory Causal Analysis of Urban Driving Data",
+      "summary": "Traffic agencies now have access to large volumes of video-derived data for studying safety and congestion. Most of these data are observational and collected without interventions, which makes causal questions such as \"How would rain change traffic density?\" difficult to answer. We present teLLMe, a system for exploratory causal analysis of urban driving datasets. The system starts from a structured event table built from dashcam annotations and combines causal structure learning with the PC algorithm, bootstrap-based stability checks, and query-specific effect estimation using linear regression and DoWhy. Natural-language questions are mapped to structured causal queries through a schema-aware LLM, enabling users to specify treatments, outcomes, and subpopulations. teLLMe returns a \"Causal Card\" that summarizes effect estimates, adjustment sets, DAG support, and assumptions, followed by a short natural-language explanation. Case studies on BDD-derived traffic events show that the system can surface plausible relationships involving weather, peak hours, and traffic density, while making uncertainty and modeling choices explicit. The system is designed as a tool for hypothesis generation and expert reasoning rather than a source of definitive causal claims.",
+      "authors": [
+        "Qiwei Li",
+        "Jorge Ortiz"
+      ],
+      "published": "2026-07-16T17:49:28Z",
+      "updated": "2026-07-16T17:49:28Z",
+      "url": "http://arxiv.org/abs/2607.15254v1",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "matched_keywords": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "2607.15253v1",
+      "title": "Bridge Evidence: Static Retrieval Utility Does Not Predict Causal Utility in Multi-Step Agentic Search",
+      "summary": "Retrieval systems are trained and evaluated on a static idea of usefulness: hand a document and a question to a reader model, see whether the answer improves, and score the document accordingly. The idea holds up when a document is read on its own. It breaks when a language model works as a search agent, issuing several queries and reasoning across turns, because a document can matter for what it lets the agent do next rather than for what it says about the current question. We measure that gap rather than argue it. Using a ReAct style agent over HotpotQA, we replay 1000 development questions and, for every document the agent read, delete it and re-run the rest of the trajectory from that point. Comparing the original run against its counterfactual gives a Counterfactual Trajectory Utility (CTU) score from three deltas: final answer quality, next query retrieval quality, and turn count. Crossing CTU against Static RAG Utility (SRU) over 23,322 document observations, the two are close to statistically independent (Spearman rho = -0.026). Roughly a third of the documents the agent reads are causally load bearing while looking useless to a static reader; we call these bridge documents. The pattern survives when the reader based axis is swapped for a BM25 and cross encoder proxy, giving a bridge cell of 27.2% on an evenly spread axis. A second experiment pins down the mechanism. Using the Observable Entity Relevance (OER) measure from prior work, entities that discriminate relevant from non-relevant candidates appear in the agent's next query 4.02 times more often than entities found only in non-relevant documents (6.1% vs 1.5%, n = 227,139). A bridge document earns its keep by handing the agent a discriminative entity that redirects the search. Static relevance and causal usefulness are different quantities in agentic retrieval, and optimizing the first does not deliver the second.",
+      "authors": [
+        "Debayan Mukhopadhyay",
+        "Utshab Kumar Ghosh",
+        "Shubham Chatterjee"
+      ],
+      "published": "2026-07-16T17:48:29Z",
+      "updated": "2026-07-16T17:48:29Z",
+      "url": "http://arxiv.org/abs/2607.15253v1",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "matched_keywords": [
+        "RAG",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.15247v1",
+      "title": "AutoSynthesis: An agentic system for automated meta-analysis",
+      "summary": "Evidence synthesis is crucial for turning primary research into reliable knowledge for science, medicine, education, and policy. Yet, quantitative evidence synthesis remains largely manual and difficult to scale. Here, we introduce AutoSynthesis, an end-to-end multi-agent system for automated meta-analysis. Given a research question in natural language, AutoSynthesis formulates a search strategy, retrieves scientific literature, screens candidate studies, assesses full-text eligibility, extracts quantitative statistics, computes standardized effect sizes, and finally performs random-effects meta-analysis. AutoSynthesis further supports heterogeneity analysis to examine how effect sizes vary across moderators, as well as risk-of-bias assessment. As output, AutoSynthesis produces a transparent report aligned with PRISMA guidelines. In our application, AutoSynthesis screened over 28 studies and extracted more than 20 quantitative claims. The pooled effect estimates produced by AutoSynthesis are similar to Hedges' $g$ of expert-conducted meta-analyses, indicating close agreement with manual evidence synthesis. Together, these results show that AutoSynthesis can make quantitative evidence synthesis more scalable, thereby supporting evidence-based decision-making across disciplines.",
+      "authors": [
+        "Moein Taherinezhad",
+        "Sebastian Maier",
+        "Gerardo Vitagliano",
+        "Francesco Pierri",
+        "Stefan Feuerriegel"
+      ],
+      "published": "2026-07-16T17:45:27Z",
+      "updated": "2026-07-16T17:45:27Z",
+      "url": "http://arxiv.org/abs/2607.15247v1",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_keywords": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.15246v1",
+      "title": "ARMOR++: Agentic Orchestration of a Multi-Domain Primitive Set for Transferable Attacks on Deepfake Detectors",
+      "summary": "The reliability of deepfake detectors frequently degrades under black-box adversarial transfer, as these models often rely on fragile, architecture-dependent forensic cues. Existing transfer attacks often lack semantic awareness and struggle to maintain effectiveness under strict no-query constraints, particularly when perturbations are transferred from convolutional surrogates to transformer-based targets. To address these limitations, this paper introduces ARMOR++, a robust multi-agent framework designed for high-transferability deepfake evasion. The framework leverages the Qwen2.5-VL Vision-Language Model (VLM) to supply spatial semantic priors, while the Qwen3 Large Language Model (LLM) orchestrates primitive selection, adaptive hyperparameter reparameterization, and entropy-regularized perturbation mixing. By integrating five complementary primitives, spanning dense optimization, saliency-based methods, spatial transformations, frequency-domain perturbations, and block-structured modifications, ARMOR++ effectively targets heterogeneous inductive biases. Rigorous evaluation on the AADD-2025 benchmark demonstrates that ARMOR++ significantly outperforms existing agentic and non-agentic baselines across both low- and high-quality image regimes. Statistical analysis confirms a substantial gain in blind-target Attack Success Rate (ASR) over the state-of-the-art agentic baseline, with further performance advantages evidenced against non-agentic benchmarks and under robust defensive configurations. These findings highlight a significant residual reliability gap in current deepfake detector deployments and demonstrate the efficacy of agentic orchestration in identifying latent vulnerabilities.",
+      "authors": [
+        "Christos Korgialas",
+        "Gabriel Lee Jun Rong",
+        "Dion Jia Xu Ho",
+        "Pai Chet Ng",
+        "Xiaoxiao Miao"
+      ],
+      "published": "2026-07-16T17:45:13Z",
+      "updated": "2026-07-16T17:45:13Z",
+      "url": "http://arxiv.org/abs/2607.15246v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "RAG",
+        "Agent"
+      ]
+    },
+    {
+      "id": "2607.15232v1",
+      "title": "In-Place Tokenizer Expansion for Pre-trained LLMs",
+      "summary": "A tokenizer fixed at the start of pre-training allocates vocabulary in proportion to the pre-training corpus, reflecting the deployment priorities at that time. When those priorities shift, languages added later are split into many more tokens per word, which can raise latency, compute, and energy consumption for users of those languages. Cloud models can afford a broad vocabulary because the embedding and LM-head matrices are a small fraction of their parameters. On a compact model those matrices are a material share of per-token decode bandwidth, so on-device models ship small vocabularies and accept fragmentation outside a fixed language set. We present tokenizer expansion, an in-place recipe for upgrading a pre-trained model's tokenizer when the model producer controls its design. We continue the existing tokenizer's BPE merges on a multilingual corpus, so most source tokens carry over unchanged as single tokens and every new token has an exact decomposition into source tokens. We copy the carried-over embedding rows unchanged and initialize new rows as the mean of their source sub-token embeddings. A two-stage adaptation, embedding-only training then full-model continued pre-training, recovers source-checkpoint quality. We apply the recipe to a continued pre-trained checkpoint of LFM2-8B-A1B, an 8B-parameter Mixture-of-Experts model, to help produce LFM2.5-8B-A1B with a 128K tokenizer. The expanded tokenizer encodes Hindi and Vietnamese in roughly $2.4\\times$ and $2.6\\times$ fewer tokens than the source (up to $4.0\\times$ on Thai). Combining these reductions with the measured per-token cost of the larger vocabulary, we estimate a $2.2$-$3.7\\times$ per-character decode speedup for these languages across our reference devices. We release the model weights and the expanded tokenizer, and report the negative findings that shaped the recipe.",
+      "authors": [
+        "Jimmy T. H. Smith",
+        "Tarek Dakhran",
+        "Alberto Cabrera",
+        "Simon S. Lee",
+        "Paul Pak"
+      ],
+      "published": "2026-07-16T17:32:38Z",
+      "updated": "2026-07-16T17:32:38Z",
+      "url": "http://arxiv.org/abs/2607.15232v1",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "RAG"
+      ]
+    },
+    {
+      "id": "2607.15218v1",
+      "title": "When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space",
+      "summary": "Large language models (LLMs) increasingly serve as high-level planners for embodied agents, where linguistically benign instructions can become unsafe once grounded in the physical world. We study whether this physically grounded danger is the same safety problem as ordinary text-level content danger. Through hidden-state direction analysis and random-split null tests, we show that content danger (CD) and physical danger (PD) form separable signals in LLM representations across Qwen2.5-3B/7B/14B/32B, Phi-3.5 and SmolLM2. Building on the CD/PD separability, we propose PRISM, a single-layer L2-regularized logistic probe over full hidden states. PRISM achieves 86.2--87.7\\% accuracy on SafeAgentBench with 11.7--13.7\\% FPR, while same-scale LLM judges over-block safe tasks at 24.7--39.0\\% FPR. We further introduce PhysicalSafetyBench-1K (PSB-1K), a contrastive benchmark of 1{,}000 physical-risk pairs without direct harm keywords, to test whether methods detect physically grounded danger rather than explicit unsafe wording. On PSB-1K, PRISM reaches 99.6\\% accuracy and 0.7\\% FPR, whereas a Qwen2.5-3B judge rejects 67.8\\% of safe tasks. PRISM also replicates on SafeText and EARBench, supporting hidden-state probing as a representation-level method for physical safety beyond text moderation.",
+      "authors": [
+        "Weimeng Wang",
+        "Ziqiang Wang",
+        "Zihang Zhan",
+        "Chuanpu Fu",
+        "Qi Li"
+      ],
+      "published": "2026-07-16T17:20:38Z",
+      "updated": "2026-07-16T17:20:38Z",
+      "url": "http://arxiv.org/abs/2607.15218v1",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "matched_keywords": [
+        "LLM",
+        "Agent"
+      ]
+    },
     {
       "id": "2607.15211v1",
       "title": "MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos",
@@ -222,212 +439,6 @@
       "matched_keywords": [
         "Agent",
         "Harness"
-      ]
-    },
-    {
-      "id": "2607.15142v1",
-      "title": "Concept-Guided Spatial Regularization for World Models in Atari Pong",
-      "summary": "World models are usually evaluated as components of model-based reinforcement learning (MBRL) systems, while the world models themselves are rarely studied in isolation. We examine five representative visual world-model agents in Atari Pong: DreamerV3, DIAMOND, TWISTER, Simulus, and STORM. After reproducing their training pipelines and matching the reported agent performance, we freeze the learned world models and evaluate them with a closed-loop rollout diagnostic: a policy trained separately from the corresponding MBRL agent interacts with each frozen model, and the generated video trajectories are inspected for visual and dynamical errors. Across all five models, the rollouts contain clear failures, including ball disappearance, incorrect ball motion, and invalid ball-paddle interactions. Beyond visual trajectories, we further evaluate them with pixel-space zero-shot MBRL, where a new policy is trained entirely inside a frozen world model and then evaluated in the real environment. Across all five models, the resulting policies substantially underperform those produced by the corresponding original MBRL training pipelines. The gap is particularly large for DreamerV3, whose mean return drops from -5.5 to -20.9, near the minimum Pong return of -21. We hypothesize that insufficient modeling of task-critical concepts, such as the ball in Pong, may contribute to these failures. We therefore propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary pixel reconstruction loss applied to segmented concept regions. Experiments show that CGSReg improves both closed-loop rollouts and pixel-space zero-shot MBRL in DreamerV3, DIAMOND, and TWISTER. Its effects vary across the remaining models and evaluation metrics, indicating that CGSReg alone does not address all world-model bottlenecks.",
-      "authors": [
-        "Yukuan Lu",
-        "Zaishuo Xia",
-        "Weyl Lu",
-        "Yubei Chen"
-      ],
-      "published": "2026-07-16T15:46:44Z",
-      "updated": "2026-07-16T15:46:44Z",
-      "url": "http://arxiv.org/abs/2607.15142v1",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15114v1",
-      "title": "CoSimRec: Measuring Coordinated-Content Penetration in Recommender Feedback Loops",
-      "summary": "Recommender systems increasingly shape which content reaches users, making it important to understand whether coordinated activity is amplified beyond the accounts that initiate it. Existing robustness evaluations largely focus on static target-rank changes and do not capture how coordinated interactions, recommendation, and user response evolve within a feedback loop. To address this gap, we propose CoSimRec, an offline agent-based evaluation framework that models coordinated accounts, dynamic ranking, non-bot responses, and ranking interventions in a shared closed-loop process. CoSimRec introduces the Algorithmic Penetration Rate (APR) metric family to measure target content's share of non-bot exposure and engagement, lift against matched no-attack baselines, and exposure gained per coordinated interaction. We evaluate CoSimRec on MIND, MovieLens, and LastFM using random, popularity-based, feedback-sensitive, MF, and BPR-MF recommenders, with ten-seed inference for the primary APR analysis and population-scale experiments of up to 1000 users. Random controls show no statistically supported positive penetration, whereas popularity-based and feedback-sensitive ranking produce significant positive APR-Lift in all six master-worker dataset--recommender settings, reaching 0.4505 on LastFM; synchronization-aware ranking reduces APR in every corresponding defense setting.",
-      "authors": [
-        "Nan Li",
-        "Jiahong Shao",
-        "Jiuyang Lyu"
-      ],
-      "published": "2026-07-16T15:24:09Z",
-      "updated": "2026-07-16T15:24:09Z",
-      "url": "http://arxiv.org/abs/2607.15114v1",
-      "categories": [
-        "cs.IR",
-        "cs.SI"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15113v1",
-      "title": "A lower bound of 4 for online graph exploration",
-      "summary": "In the online graph exploration problem, a single agent needs to visit every vertex of an initially unknown graph, which is learned over time in an online fashion, and return to its starting position. We prove that the competitive ratio of this problem is at least 4, improving on the previously best known lower bound of 10/3. A key ingredient of our proof is showing that several restrictions can be imposed on the agent's behavior without affecting the competitive ratio. As a byproduct, we also obtain that certain graph properties, such as the triangle inequality or being subcubic, can be assumed without affecting the competitive ratio.",
-      "authors": [
-        "Julia Baligacs"
-      ],
-      "published": "2026-07-16T15:22:38Z",
-      "updated": "2026-07-16T15:22:38Z",
-      "url": "http://arxiv.org/abs/2607.15113v1",
-      "categories": [
-        "cs.DS",
-        "cs.DM"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15095v1",
-      "title": "Digital Pantheon: Simulating and Auditing Coalition Formation with LLM Agents",
-      "summary": "The formation of political coalitions is a complex negotiation driven by both concrete policy objectives and deep-seated ideological convictions. While Large Language Models (LLMs) open new avenues for computational political science, the neutrality and helpfulness biases instilled by Reinforcement Learning from Human Feedback (RLHF) prevent them from sustaining steadfast partisan behaviour. We present a multi-agent framework that reconciles factual grounding with ideological alignment by combining Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Retrieval-Augmented Generation (RAG): DPO instils aggressive party-specific personas, while a per-party RAG pipeline keeps each agent bounded to its official manifesto. We operationalize the framework on the 2019 Flemish election, deploying the partisan agents in a hub-and-spoke negotiation arbitrated by a formateur. To make the emergent negotiation interpretable, we introduce a Multi-Layered Information Lineage Topology (MILT) that traces every clause in the final agreement back to its manifesto origin and classifies it into five provenance states, a Coalition Influence Score (CIS) that aggregates these traceable contributions to identify which party shaped the agreement, and a real-world grounding pass that benchmarks each simulated provision against the historically adopted coalition agreement. Across three independent simulations the framework yields a stable winner and ranking (N-VA ahead of CD\\&V and Open Vld), and manifesto-anchored lineage reliably predicts real-world materialization whereas hallucinated content does not. The result is a transparent, scalable testbed for the ex-ante exploration of party compatibility and formateur-mediated compromise.",
-      "authors": [
-        "Dylan Van Mulders",
-        "Matthias Bogaert",
-        "Dirk Van den Poel"
-      ],
-      "published": "2026-07-16T15:08:29Z",
-      "updated": "2026-07-16T15:08:29Z",
-      "url": "http://arxiv.org/abs/2607.15095v1",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.MA"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "RAG",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15092v1",
-      "title": "Rubrics on Trial: Evolving Rubrics from a Single Query via Synthetic Pairwise Evidence",
-      "summary": "Rubrics provide structured, fine-grained signals for training and evaluating large language models (LLMs). Yet reliable query-specific rubrics are difficult to construct. Existing approaches often derive supervision from human-written rubrics, preference data, or sampled responses. Direct query-to-rubric generation avoids these resources, but provides no explicit check that a plausible rubric is useful. Such a rubric may fail to distinguish answer quality, reward an optional style, or penalize a valid alternative strategy. We introduce Rubrics on Trial, a query-only framework that evolves a rubric set from an empty set without external annotations or model training. It derives supervision solely from synthetic rubric-conditioned response pairs and validates each proposed rubric before adding it, screening out non-discriminative, over-specific, and style-only candidate rubrics. Experiments across five preference benchmark suites demonstrate the effectiveness of Rubrics on Trial, which achieves the best average accuracy and leads on six of seven evaluation sets.",
-      "authors": [
-        "Haocheng Yang",
-        "Licheng Pan",
-        "Xiaoxi Li",
-        "Zhichao Chen",
-        "Zhiheng Zhang"
-      ],
-      "published": "2026-07-16T15:01:33Z",
-      "updated": "2026-07-16T15:01:33Z",
-      "url": "http://arxiv.org/abs/2607.15092v1",
-      "categories": [
-        "cs.CL"
-      ],
-      "matched_keywords": [
-        "LLM",
-        "RAG"
-      ]
-    },
-    {
-      "id": "2607.15081v1",
-      "title": "DataShield: Uncovering Risky Fine-Tuning Data Across LLMs Through Consensus Subspace Alignment",
-      "summary": "Fine-tuning large language models (LLMs) on domain-specific datasets has become a standard paradigm for adapting LLMs to specialized applications. However, recent work has shown that even fine-tuning on benign task-specific data can substantially weaken the safety capabilities of LLMs. While existing efforts have made progress in identifying data responsible for safety degradation, they usually rely on a single mean vector computed over a specific model with its tokenizer to represent the safety direction, which limits both the effectiveness and transferability of their risk assessment measures. To address these limitations, we propose DataShield, a data assessment framework that identifies risky fine-tuning samples and response segments through consensus subspace alignment over joint safety-critical semantic spaces derived from multiple safety-aligned LLMs. Within these spaces, DataShield extracts consensus safe and unsafe subspaces using semantic spectral decomposition over safe and unsafe data representations. The risk of a data sample or segment is then estimated by measuring its relative alignment with the unsafe and safe subspaces, enabling both sample-level filtering and fine-grained segment-level masking. Compared with state-of-the-art filtering and masking baselines, DataShield reduces ASR by 14.6\\% with sample filtering and 32.3\\% with segment masking, while preserving downstream utility and avoiding target-model-specific risk computation.",
-      "authors": [
-        "Zefeng Wu",
-        "Weiwei Qi",
-        "Jielong Chen",
-        "Tianhang Zheng",
-        "Di Hong"
-      ],
-      "published": "2026-07-16T14:51:42Z",
-      "updated": "2026-07-16T14:51:42Z",
-      "url": "http://arxiv.org/abs/2607.15081v1",
-      "categories": [
-        "cs.CR"
-      ],
-      "matched_keywords": [
-        "LLM"
-      ]
-    },
-    {
-      "id": "2607.15079v1",
-      "title": "BrainPilot: Automating Brain Discovery with Agentic Research",
-      "summary": "Understanding the brain increasingly depends on integrating evidence across scales, modalities, and disciplines. Addressing a single research question therefore requires a coordinated sequence of operations, from surveying prior work to executing analyses and interpreting results in light of domain knowledge. AI agents promise to accelerate this process, but current agents lack domain expertise in brain science, may fabricate claims, drift during multi-step reasoning, and offer few defined points for expert intervention. These failures are especially costly in brain science, where conclusions feed into downstream scientific claims and depend on laboratory-specific expertise and careful human judgment. We present \\textbf{BrainPilot} a \\textbf{fully open-source} multi-agent system that accelerates brain science research with traceable logs and agent-verified results. A principal investigator (PI) agent coordinates specialist agents grounded in curated domain knowledge: a unified brain science knowledge base containing 7{,}233 indexed items and a skill library of 72 reusable methodology units across seven research domains. Every major step is recorded in the Graph of Trace, an auditable record that links subgoals, tool use, evidence, and claims and allows researchers to follow and inspect the workflow. An Auditor agent further integrates fabrication checking into the workflow. For evaluation, we run three brain science tasks from Agents' Last Exam, introduce our own benchmark, \\textbf{BrainPilotBench-v0}, and present additional end-to-end case studies. Across these evaluations, BrainPilot with an open-source backbone model attains performance comparable to state-of-the-art agent framework with less costs.",
-      "authors": [
-        "Haoxuan Li",
-        "Tianci Gao",
-        "Jianhe Li",
-        "Yang Fan",
-        "Runze Shi"
-      ],
-      "published": "2026-07-16T14:49:25Z",
-      "updated": "2026-07-16T14:49:25Z",
-      "url": "http://arxiv.org/abs/2607.15079v1",
-      "categories": [
-        "cs.AI"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15053v1",
-      "title": "ANet Patu-1: The Value of Connection in the Agent Network",
-      "summary": "The Internet taught us that the value of a network depends on \\emph{how} its nodes connect: broadcast stars scale as $V\\!\\propto\\!N$ (Sarnoff), fully-connected meshes as $N^2$ (Metcalfe), and group-forming networks as $2^{N}$ (Reed). We ask the analogous question for networks of AI agents. We model the net value of connection as a function of coordination-group size, derive from it the properties an optimal collaboration protocol must have, and introduce ANet Patu-1 -- a self-organizing consensus protocol in which the network continuously re-forms its own coalitions, adaptively riding the upper envelope of all three regimes at $O(1)$ parallel consensus rounds. To measure value without opinion-grading, we score an emergent protocol by formally specifying it and deriving its complexity, the way distributed algorithms are analyzed. Two results follow. (i)~Emergence -- a crowd of the \\emph{cheapest} model, when heterogeneous, starts weak but its collective value compounds with $N$ and \\emph{overtakes} a crowd of a far \\emph{stronger} model that is homogeneous: a crossover that marks a scaling law for collaboration rather than for scale. (ii)~Reflexivity -- a heterogeneous network, given only its own problem and no design hints, converges on ANet Patu-1 itself, reconstructing the high-dimensional law that governs its own connective value.",
-      "authors": [
-        "Mu Yuan",
-        "Jinke Song",
-        "Zhaomeng Zhou",
-        "Lan Zhang"
-      ],
-      "published": "2026-07-16T14:31:15Z",
-      "updated": "2026-07-16T14:31:15Z",
-      "url": "http://arxiv.org/abs/2607.15053v1",
-      "categories": [
-        "cs.NI",
-        "cs.AI"
-      ],
-      "matched_keywords": [
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15051v1",
-      "title": "SCITUS: A Multi-Jurisdictional Framework for Adapting NIST AI RMF to the Canadian Regulatory Context",
-      "summary": "Canadian organizations deploying artificial intelligence systems face a fragmented regulatory landscape spanning federal requirements (the Treasury Board Directive on Automated Decision-Making) and divergent provincial regulations across Ontario, Quebec, Alberta, Manitoba, and British Columbia. The death of Bill C-27 (Artificial Intelligence and Data Act) in January 2025 - and the federal government's June 2026 confirmation that it will pursue targeted instruments rather than omnibus AI legislation - leaves organizations without unified compliance guidance. Global frameworks such as NIST AI RMF 1.0, the EU AI Act, and ISO/IEC 42001 provide valuable guidance but lack systematic methodologies for adaptation to multi-jurisdictional national contexts. We present SCITUS (Systematic Canadian Integration for Trustworthy and Unified Standards), a comprehensive framework adapting NIST AI RMF 1.0 to Canadian federal and provincial AI regulations simultaneously. SCITUS integrates seven trustworthy-AI characteristics enhanced for Canadian requirements, four core governance functions, a novel multi-jurisdictional compliance mapping methodology, and a versioned control catalog that has evolved from 31 controls (v1.0, June 2025) to 57 controls (v2.0, July 2026) in response to regulatory developments - including Canada's first regulatory findings on generative-AI training data - and the documented 2026 agentic-AI threat landscape. We demonstrate applicability through scenarios spanning federal government, provincial healthcare, and the private sector, and argue that systematic adaptation of NIST AI RMF to multi-jurisdictional requirements offers significant advantages over jurisdiction-by-jurisdiction compliance and provides a replicable model for other federal systems.",
-      "authors": [
-        "Mohammad Etemad"
-      ],
-      "published": "2026-07-16T14:29:52Z",
-      "updated": "2026-07-16T14:29:52Z",
-      "url": "http://arxiv.org/abs/2607.15051v1",
-      "categories": [
-        "cs.CY"
-      ],
-      "matched_keywords": [
-        "RAG",
-        "Agent"
-      ]
-    },
-    {
-      "id": "2607.15038v1",
-      "title": "Video = World + Event Stream",
-      "summary": "We present Wan-Streamer v0.3, which reframes our native-streaming interaction model under a single organizing view: a video is a world plus an event stream. The world is the persistent context in which a video unfolds, including the environment, scene, subjects, ambient acoustic conditions, voice characteristics, and other relatively stable conditions. The event stream is everything that changes over time within that world, including scene or environmental changes, subject behavior, speech, and other sounds. This yields a general-purpose pretraining task over large amounts of real video: given a world and incoming input, predict how the world moves, changes, and responds in real time. The resulting competence can be specialized to a broad family of real-time downstream tasks. We instantiate it on real-time full-duplex audio-visual interaction, where the event stream is the agent's speech together with free-form behavior. Functionally, the model's multimodal understanding process is vision-language-action-like: it maps multimodal user input to language-form speech and behavior actions. Wan-Streamer v0.3 preserves the v0.2 operating point: 640x368 video at 25 FPS, a 160 ms streaming unit, approximately 200 ms model-side response latency, and approximately 550 ms total interaction latency under a 350 ms bidirectional network budget.",
-      "authors": [
-        "Lianghua Huang",
-        "Zhi-Fan Wu",
-        "Yupeng Shi",
-        "Wei Wang",
-        "Mengyang Feng"
-      ],
-      "published": "2026-07-16T14:19:42Z",
-      "updated": "2026-07-16T14:19:42Z",
-      "url": "http://arxiv.org/abs/2607.15038v1",
-      "categories": [
-        "cs.CV"
-      ],
-      "matched_keywords": [
-        "Agent"
       ]
     }
   ]
